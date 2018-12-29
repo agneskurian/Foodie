@@ -12,15 +12,13 @@
             <asp:BoundField DataField="Facility" HeaderText="Facility" SortExpression="Facility" />
             <asp:BoundField DataField="Description" HeaderText="Description" SortExpression="Description" />
             <asp:BoundField DataField="shopid" HeaderText="shopid" SortExpression="shopid" />
-        </Columns>
-
-    </asp:GridView>
     --%>
     <div class="col-lg-8 col-lg-offset-2 detailed mt">
                         <h4 class="mb">View Employee Details</h4>
 <asp:GridView ID="GridView2" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource2" BackColor="#CCCCCC" BorderColor="#999999" BorderStyle="Solid" BorderWidth="3px" CellPadding="4" CellSpacing="2" ForeColor="Black" OnSelectedIndexChanged="GridView2_SelectedIndexChanged">
         <Columns>
             <asp:BoundField DataField="shopid" HeaderText="shopid" SortExpression="shopid" />
+            <asp:BoundField DataField="Profileid" HeaderText="Profileid" SortExpression="Profileid" />
             <asp:BoundField DataField="shopname" HeaderText="shopname" SortExpression="shopname" />
             <asp:BoundField DataField="city" HeaderText="city" SortExpression="city" />
             <asp:BoundField DataField="mobile" HeaderText="mobile" SortExpression="mobile" />
@@ -30,6 +28,7 @@
             <asp:BoundField DataField="Distance" HeaderText="Distance" SortExpression="Distance" />
             <asp:BoundField DataField="Facility" HeaderText="Facility" SortExpression="Facility" />
             <asp:BoundField DataField="Description" HeaderText="Description" SortExpression="Description" />
+            <asp:BoundField DataField="Date" HeaderText="Date" SortExpression="Date" />
 
             <asp:TemplateField HeaderText="Image">
                   <ItemTemplate>
@@ -51,7 +50,7 @@
         <SortedDescendingCellStyle BackColor="#CAC9C9" />
         <SortedDescendingHeaderStyle BackColor="#383838" />
     </asp:GridView>
-    <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:QuickyConnectionString %>" SelectCommand="SELECT dbaddprofile.shopid, dbshopregister.shopname, dbshopregister.city, dbshopregister.mobile, dbaddprofile.HotelType, dbaddprofile.image, dbaddprofile.Location, dbaddprofile.Distance, dbaddprofile.Facility, dbaddprofile.Description FROM dbaddprofile INNER JOIN dbshopregister ON dbaddprofile.shopid = dbshopregister.shopid">
+    <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:QuickyConnectionString %>" SelectCommand="SELECT tbl_addprofile.shopid, dbshopregister.shopname, dbshopregister.city, dbshopregister.mobile,tbl_addprofile.Profileid, tbl_addprofile.HotelType, tbl_addprofile.image, tbl_addprofile.Location, tbl_addprofile.Distance, tbl_addprofile.Facility, tbl_addprofile.Description, tbl_addprofile.Date FROM tbl_addprofile INNER JOIN dbshopregister ON tbl_addprofile.shopid = dbshopregister.shopid">
         
     </asp:SqlDataSource>
 </div>

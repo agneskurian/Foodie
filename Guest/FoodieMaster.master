@@ -1,5 +1,7 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="FoodieMaster.master.cs" Inherits="Guest_FoodieMaster" %>
 
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
+
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -57,9 +59,16 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<a href="products.html">Today's special Offers !</a>
 		</div>
 		<div class="w3l_search">
-			<form action="#" method="post">
-				<input type="text" name="Product" value="Search a product..." onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search a product...';}" required="">
-				<input type="submit" value=" ">
+
+    
+
+ <form id="form1" runat="server">
+                <%--<asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+                <cc1:ListSearchExtender ID="ListSearchExtender1" runat="server"></cc1:ListSearchExtender>
+                --%>
+                <asp:TextBox ID="txtsearch" runat="server"></asp:TextBox>
+                          <asp:ImageButton ID="ImageButton1" runat="server" Height="41px" ImageUrl="images/search2.jpg" OnClick="ImageButton1_Click" ValidateRequestMode="Disabled" Width="40px"/>		
+
 			</form>
 		</div>
 		<div class="product_list_header">  
@@ -132,69 +141,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	</div>
 <!-- //header -->
 <!-- banner -->
-    <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
-
     
-                        </asp:ContentPlaceHolder>
-
-<%--	<div class="banner">--%>
-
-		<%--<div class="w3l_banner_nav_left">
-			<nav class="navbar nav_bottom">
-			 <!-- Brand and toggle get grouped for better mobile display -->
-			  <div class="navbar-header nav_2">
-				  <button type="button" class="navbar-toggle collapsed navbar-toggle1" data-toggle="collapse" data-target="#bs-megadropdown-tabs">
-					<span class="sr-only">Toggle navigation</span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-				  </button>
-			   </div> 
-	--%>		   <!-- Collect the nav links, forms, and other content for toggling -->
-				<%--<div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
-					<ul class="nav navbar-nav nav_1">
-						<li><a href="products.html">Branded Foods</a></li>
-						<li><a href="household.html">Households</a></li>
-						<li class="dropdown mega-dropdown active">
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown">Veggies & Fruits<span class="caret"></span></a>				
-							<div class="dropdown-menu mega-dropdown-menu w3ls_vegetables_menu">
-								<div class="w3ls_vegetables">
-									<ul>	
-										<li><a href="vegetables.html">Vegetables</a></li>
-										<li><a href="vegetables.html">Fruits</a></li>
-									</ul>
-								</div>                  
-							</div>				
-						</li>
-						<li><a href="kitchen.html">Kitchen</a></li>
-						<li><a href="short-codes.html">Short Codes</a></li>
-						<li class="dropdown">
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown">Beverages<span class="caret"></span></a>
-							<div class="dropdown-menu mega-dropdown-menu w3ls_vegetables_menu">
-								<div class="w3ls_vegetables">
-									<ul>
-										<li><a href="drinks.html">Soft Drinks</a></li>
-										<li><a href="drinks.html">Juices</a></li>
-									</ul>
-								</div>                  
-							</div>	
-						</li>
-						<li><a href="pet.html">Pet Food</a></li>
-						<li class="dropdown">
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown">Frozen Foods<span class="caret"></span></a>
-							<div class="dropdown-menu mega-dropdown-menu w3ls_vegetables_menu">
-								<div class="w3ls_vegetables">
-									<ul>
-										<li><a href="frozen.html">Frozen Snacks</a></li>
-										<li><a href="frozen.html">Frozen Nonveg</a></li>
-									</ul>
-								</div>                  
-							</div>	
-						</li>
-						<li><a href="bread.html">Bread & Bakery</a></li>
-					</ul>
-				 </div><!-- /.navbar-collapse -->
-			</nav>--%>
 		<div class="w3l_banner_nav_right">
 			<section class="slider">
 				<div class="flexslider">
@@ -243,7 +190,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		</div>
 		<div class="clearfix"></div>
 
-<!-- banner -->
+<!-- banner -->           
+     <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+
 	<div class="w3l_banner_nav_right">
 			<div class="w3l_banner_nav_right_banner3_btm">
 				<div class="col-md-4 w3l_banner_nav_right_banner3_btml">
@@ -295,6 +244,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			</div>
 		
         </div>
+                                 </asp:ContentPlaceHolder>
 
 
 <!-- //newsletter -->
@@ -427,7 +377,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 
 
-<%--    <form id="form1" runat="server">--%>
+<%--   --%>
     <%--    </form>--%>
 </body>
 </html>

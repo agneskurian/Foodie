@@ -4,6 +4,10 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Data;
+using System.Data.SqlClient;
+using System.Configuration;
+
 
 public partial class Guest_FoodieMaster : System.Web.UI.MasterPage
 {
@@ -16,4 +20,36 @@ public partial class Guest_FoodieMaster : System.Web.UI.MasterPage
         HttpContext.Current.Response.Cache.SetNoStore();
   
     }
+    protected void ImageButton1_Click(object sender, ImageClickEventArgs e)
+    {
+        Class1 obj = new Class1();
+        obj.getconnect();
+        SqlCommand cmd = new SqlCommand("spshopregister", obj.con);
+        cmd.CommandType = CommandType.StoredProcedure;
+        cmd.Parameters.Add("@flag",2);
+        cmd.Parameters.Add("@city",txtsearch.Text);
+        clear();
+        DataTable dt = new DataTable();
+        SqlDataAdapter adt = new SqlDataAdapter(cmd);
+        adt.Fill(dt);
+        if(dt.Rows.Count>0)
+        {
+            Response.Redirect("~/Guest/nearestshop.aspx");
+
+        }
+        else
+        {
+            txtsearch.Text = "No hotels";
+        }
+
+    }
+        protected void clear()
+        {
+        txtsearch.Text = "";
+       
+        }
+    
+       
+    
+
 }

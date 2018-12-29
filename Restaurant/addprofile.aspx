@@ -1,5 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Restaurant/RestaurantMaster.master" AutoEventWireup="true" CodeFile="addprofile.aspx.cs" Inherits="Restaurant_addprofile" %>
 
+<%@ Register assembly="AjaxControlToolkit" namespace="AjaxControlToolkit" tagprefix="cc1" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
@@ -83,6 +85,16 @@
                  <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="*" ControlToValidate="txtdescription" ForeColor="Red"></asp:RequiredFieldValidator>
                  <br />
                  <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:QuickyConnectionString %>" SelectCommand="SELECT * FROM [dbadd_profile]"></asp:SqlDataSource>
+                 </div>&nbsp;</td>
+         </tr>
+          <tr>
+             <td><div class="form-group"><label class="col-lg-2 control-label">Date</label>&nbsp;</div></td>
+             <td><div class="col-lg-6"><asp:TextBox ID="txtdate" runat="server"  class="form-control" placeholder="" required=""></asp:TextBox>
+                 <cc1:CalendarExtender ID="txtdate_CalendarExtender" runat="server" Enabled="True" TargetControlID="txtdate">
+                 </cc1:CalendarExtender>
+                 <asp:ScriptManager ID="ScriptManager1" runat="server">
+                 </asp:ScriptManager>
+                 <br />
                  </div>&nbsp;</td>
          </tr>
      </table>

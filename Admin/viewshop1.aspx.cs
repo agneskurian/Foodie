@@ -17,7 +17,9 @@ public partial class Admin_viewshop1 : System.Web.UI.Page
     }
     protected void GridView2_SelectedIndexChanged(object sender, EventArgs e)
     {
-        Response.Redirect("approveshop.aspx?id=" + GridView2.SelectedRow.Cells[0].Text);
+        Response.Redirect("approveshop.aspx?id=" + GridView2.SelectedRow.Cells[0].Text + "&id1=" + GridView2.SelectedRow.Cells[1].Text);
+        //Response.Redirect("View_tblresrv_details.aspx?id=" + GridView1.SelectedRow.Cells[0].Text + "&id1=" + GridView1.SelectedRow.Cells[1].Text);
+
 
     }
 }
