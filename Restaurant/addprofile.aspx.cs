@@ -37,6 +37,7 @@ public partial class Restaurant_addprofile : System.Web.UI.Page
         cmd.Parameters.Add("@Distance", txtdistance.Text);
         cmd.Parameters.Add("@Facility", DropDownList2.Text);
         cmd.Parameters.Add("@Description",txtdescription.Text);
+        cmd.Parameters.Add("@Status", "Pending");
         cmd.ExecuteNonQuery();
         clear();
         Response.Write("<script>alert('Inserted Successfully')</script>");

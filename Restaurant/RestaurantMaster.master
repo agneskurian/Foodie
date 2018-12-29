@@ -279,7 +279,7 @@
               <li><a href="viewemployee.aspx">Employee</a></li>
               <li><a href="viewprofile.aspx">Shop Profile</a></li>
               <li><a href="viewfood.aspx">Food</a></li>
-              <li><a href="todo_list.html">Todo List</a></li>
+              <li><a href="viewstatus.aspx">Status</a></li>
               <li><a href="dropzone.html">Dropzone File Upload</a></li>
               <li><a href="inline_editor.html">Inline Editor</a></li>
               <li><a href="file_upload.html">Multiple File Upload</a></li>
