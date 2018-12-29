@@ -32,6 +32,7 @@
                      <asp:ListItem>BreakFast</asp:ListItem>
                      <asp:ListItem>Lunch</asp:ListItem>
                      <asp:ListItem>Dinner</asp:ListItem>
+                     <asp:ListItem>Non-Veg</asp:ListItem>
 
                  </asp:DropDownList>
                  <br />
@@ -55,7 +56,7 @@
          </tr>
           <tr>
              <td><div class="form-group"><label class="col-lg-2 control-label">Description</label>&nbsp;</div></td>
-             <td><div class="col-lg-6"><asp:TextBox ID="txtdescription" runat="server"  class="form-control" placeholder=""></asp:TextBox>
+             <td><div class="col-lg-6"><asp:TextBox ID="txtdescription" runat="server"  class="form-control" placeholder="" TextMode="MultiLine"></asp:TextBox>
                  <br />
                  </div>&nbsp;</td>
          </tr>

@@ -14,7 +14,11 @@ public partial class Restaurant_addempolyee : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-
+        if (Session["shopid"].ToString() == "")
+        {
+            Response.Redirect("~/Guest/FoodieDefault.aspx");
+        }
+   
     }
     protected void Button1_Click(object sender, EventArgs e)
     {
@@ -23,9 +27,10 @@ public partial class Restaurant_addempolyee : System.Web.UI.Page
         SqlCommand cmd = new SqlCommand("spaddemployee", obj.con);
         cmd.CommandType = CommandType.StoredProcedure;
         cmd.Parameters.Add("@flag", 0);
+        cmd.Parameters.Add("@shopid", Session["shopid"].ToString());
         cmd.Parameters.Add("@empid", txtempid.Text);
         cmd.Parameters.Add("@empname", txtename.Text);
-        cmd.Parameters.Add("@phn", txtmphn.Text);
+        cmd.Parameters.Add("@phone", txtmphn.Text);
         cmd.Parameters.Add("@image", ViewState["filepath"].ToString());
         cmd.ExecuteNonQuery();
         clear();

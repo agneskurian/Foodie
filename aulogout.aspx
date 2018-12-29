@@ -12,6 +12,7 @@
         <asp:ScriptManager ID="ScriptManager1" runat="server">
 
         </asp:ScriptManager>
+        <asp:Timer ID="Timer1" runat="server" OnTick="Timer1_Tick"></asp:Timer>
     </div>
     </form>
 </body>

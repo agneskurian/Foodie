@@ -48,7 +48,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				  <div class="form">
 					  <h2>Login to your account</h2>
                         <asp:TextBox ID="txtshopid" runat="server" placeholder="ShopId"></asp:TextBox>
-                        <asp:TextBox ID="txtpass" runat="server" placeholder="Password"></asp:TextBox>
+                        <asp:TextBox ID="txtPass" runat="server" placeholder="Password"></asp:TextBox>
 
                         <asp:Button ID="Button1" runat="server" Text="Login" OnClick="Button1_Click" />			
 				  </div>

@@ -14,7 +14,11 @@ public partial class Restaurant_addmenu : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-
+        if (Session["shopid"].ToString() == "")
+        {
+            Response.Redirect("~/Guest/FoodieDefault.aspx");
+        }
+   
     }
     protected void Button2_Click(object sender, EventArgs e)
     {

@@ -237,7 +237,7 @@
       <%--<div class="top-menu">--%>
         <ul class="nav pull-right top-menu">
 <%--            <asp:Button ID="Button1" runat="server"  class="btn btn-theme" Text="Logout"  />--%>
-          <li><a  href="../logout.aspx">Logout</a></li>
+          <li><a  href="../logout.aspx" class="logout">Logout</a></li>
        <%-- </ul>
       </div>
     --%></header>
@@ -264,6 +264,7 @@
               <span>ADD</span>
               </a>
             <ul class="sub">
+              <li><a href="addprofile.aspx">Profile</a></li>
               <li><a href="addfood.aspx">Food</a></li>
               <li><a href="addmenu.aspx">Menu</a></li>
               <li><a href="addempolyee.aspx">Employee</a></li>
@@ -276,8 +277,8 @@
               </a>
             <ul class="sub">
               <li><a href="viewemployee.aspx">Employee</a></li>
-              <li><a href="calendar.html">Calendar</a></li>
-              <li><a href="gallery.html">Gallery</a></li>
+              <li><a href="viewprofile.aspx">Shop Profile</a></li>
+              <li><a href="viewfood.aspx">Food</a></li>
               <li><a href="todo_list.html">Todo List</a></li>
               <li><a href="dropzone.html">Dropzone File Upload</a></li>
               <li><a href="inline_editor.html">Inline Editor</a></li>

@@ -14,7 +14,11 @@ public partial class Restaurant_addfood : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-
+        if (Session["shopid"].ToString() == "")
+        {
+            Response.Redirect("~/Guest/FoodieDefault.aspx");
+        }
+   
     }
     protected void Button1_Click(object sender, EventArgs e)
     {
@@ -23,6 +27,7 @@ public partial class Restaurant_addfood : System.Web.UI.Page
         SqlCommand cmd = new SqlCommand("spaddfood", obj.con);
         cmd.CommandType = CommandType.StoredProcedure;
         cmd.Parameters.Add("@flag", 0);
+        cmd.Parameters.Add("@shopid", Session["shopid"].ToString());
         cmd.Parameters.Add("@foodname", txtfname.Text);
         cmd.Parameters.Add("@category", DropDownList1.Text);
         cmd.Parameters.Add("@Description", txtdescription.Text);

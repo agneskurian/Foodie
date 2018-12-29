@@ -24,7 +24,7 @@ public partial class Guest_shoplogin : System.Web.UI.Page
         cmd.CommandType = CommandType.StoredProcedure;
         cmd.Parameters.Add("@flag",1);
         cmd.Parameters.Add("@shopid", txtshopid.Text);
-        cmd.Parameters.Add("@password", txtpass.Text);
+        cmd.Parameters.Add("@password",txtPass.Text);
 
         DataTable dt = new DataTable();
         SqlDataAdapter adt = new SqlDataAdapter(cmd);

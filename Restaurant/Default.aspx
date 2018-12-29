@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Restaurant/RestaurantMaster.master" AutoEventWireup="true" CodeFile="addprofile.aspx.cs" Inherits="Restaurant_addprofile" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Restaurant/RestaurantMaster.master" AutoEventWireup="true" CodeFile="Default.aspx.cs" Inherits="Restaurant_Default" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 </asp:Content>
@@ -94,7 +94,6 @@
                           </div>
           </div>
                       <!-- /col-lg-8 -->
-                   
-
+    
 </asp:Content>
 

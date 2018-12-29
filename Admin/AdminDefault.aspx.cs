@@ -9,6 +9,9 @@ public partial class Admin_AdminDefault : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-
+        if (Session["email"].ToString() == "")
+        {
+            Response.Redirect("~/Guest/FoodieDefault.aspx");
+        }
     }
 }
