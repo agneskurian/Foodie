@@ -68,8 +68,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 --%>
                 <asp:TextBox ID="txtsearch" runat="server"></asp:TextBox>
                           <asp:ImageButton ID="ImageButton1" runat="server" Height="41px" ImageUrl="images/search2.jpg" OnClick="ImageButton1_Click" ValidateRequestMode="Disabled" Width="40px"/>		
-
-			</form>
+     --%>
 		</div>
 		<div class="product_list_header">  
 			<form action="#" method="post" class="last">
@@ -89,7 +88,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<ul class="dropdown-menu drp-mnu">
 								<li><a href="adminlogin.aspx">AdminLogin</a></li> 
                                 <li><a href="shoplogin.aspx">Shop Login</a></li>
-								<li><a href="shoplogin.a">Sign Up</a></li>
+								<li><a href="viewcontactdetails.aspx">Contact</a></li>
 							</ul>
 						</div>                  
 					</div>	
@@ -127,7 +126,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<li><a href="events.html">Events</a><i>/</i></li>
 					<li><a href="about.html">About Us</a><i>/</i></li>
 					<li><a href="products.html">Best Deals</a><i>/</i></li>
-					<li><a href="services.html">Services</a></li>
+					<li><a href="nearestshop.aspx">Services</a></li>
 				</ul>
 			</div>
 			<div class="w3ls_logo_products_left1">
@@ -246,6 +245,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         </div>
                                  </asp:ContentPlaceHolder>
 
+    			</form>
 
 <!-- //newsletter -->
 <!-- footer -->
@@ -352,7 +352,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	</script>
 <!-- //here ends scrolling icon -->
 <script src="js/minicart.js"></script>
-<script>
+<%--<script>
     paypal.minicart.render();
 
     paypal.minicart.cart.on('checkout', function (evt) {
@@ -375,7 +375,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	</script>
 
 
-
+--%>
 
 <%--   --%>
     <%--    </form>--%>

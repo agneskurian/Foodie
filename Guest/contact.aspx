@@ -147,8 +147,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <asp:TextBox ID="txtphone" runat="server" placeholder="Phone" required=""></asp:TextBox>
                         </div>
 						<div class="clearfix"> </div>
-                         <asp:TextBox ID="TextBox1" runat="server" TextMode="MultiLine" placeholder="Message" required=""></asp:TextBox>
-                         <asp:Button ID="Button1" runat="server" Text="Submit" />
+                         <asp:TextBox ID="txtmsg" runat="server" TextMode="MultiLine" placeholder="Message" required=""></asp:TextBox>
+                         <asp:Button ID="Button1" runat="server" Text="Submit" OnClick="Button1_Click" />
                          <asp:Button ID="Button2" runat="server" Text="Cancel" />
 
 					</form>

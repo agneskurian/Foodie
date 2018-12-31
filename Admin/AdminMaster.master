@@ -274,7 +274,7 @@
               <span>View</span>
               </a>
             <ul class="sub">
-              <li><a href="viewshop1">Shop</a></li>
+              <li><a href="admin_hotel_view.aspx">Shop</a></li>
               <li><a href="calendar.html">Calendar</a></li>
               <li><a href="gallery.html">Gallery</a></li>
               <li><a href="todo_list.html">Todo List</a></li>

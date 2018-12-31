@@ -15,14 +15,14 @@ public partial class Admin_approveshop : System.Web.UI.Page
     {
         Class1 obj = new Class1();
         obj.getconnect();
-        SqlCommand cmd = new SqlCommand("spaddprofiles", obj.con);
+        SqlCommand cmd = new SqlCommand("spaddhoteldetails", obj.con);
         cmd.CommandType = CommandType.StoredProcedure;
         cmd.Parameters.Add("@flag", 2);
-        cmd.Parameters.Add("@Profileid", Request.QueryString["id1"].ToString());
+        cmd.Parameters.Add("@Hoteldetailid", Request.QueryString["id1"].ToString());
         cmd.Parameters.Add("@Status","Approved");
         cmd.Parameters.Add("@shopid", Request.QueryString["id"].ToString());
         cmd.ExecuteNonQuery();
-        Response.Redirect("viewshop1.aspx");
+        Response.Redirect("admin_hotel_view.aspx");
 
         //Class1 obj = new Class1();
         //obj.getconnect();

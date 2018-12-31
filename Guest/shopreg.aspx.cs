@@ -32,9 +32,9 @@ public partial class Guest_shopreg : System.Web.UI.Page
         cmd1.CommandType = CommandType.StoredProcedure;
         cmd1.Parameters.Add("@flag",0);
         cmd1.Parameters.Add("@shopid", txtshopid.Text);
-        cmd1.Parameters.Add("@shopname", txtsname.Text);
-        cmd1.Parameters.Add("@city", txtcity.Text);
-        cmd1.Parameters.Add("@mobile", txtmobile.Text);
+        //cmd1.Parameters.Add("@shopname", txtsname.Text);
+        //cmd1.Parameters.Add("@city", txtcity.Text);
+        cmd1.Parameters.Add("@email", txtemail.Text);
         cmd1.Parameters.Add("@password", txtpass.Text);
 
         cmd1.ExecuteNonQuery();

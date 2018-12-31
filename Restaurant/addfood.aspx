@@ -68,6 +68,12 @@
 
              </td>
              <td><div class="col-lg-6">
+
+                 <asp:RadioButtonList ID="RadioButtonList1" runat="server" Width="108px">
+                     <asp:ListItem>Available</asp:ListItem>                     <asp:ListItem>NotAvailable</asp:ListItem>
+
+                 </asp:RadioButtonList>
+
              &nbsp;<asp:TextBox ID="txtavail" runat="server"  class="form-control" placeholder=""></asp:TextBox>
                  <br />
                  </div></td>

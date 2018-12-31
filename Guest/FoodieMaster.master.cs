@@ -24,30 +24,41 @@ public partial class Guest_FoodieMaster : System.Web.UI.MasterPage
     {
         Class1 obj = new Class1();
         obj.getconnect();
-        SqlCommand cmd = new SqlCommand("spshopregister", obj.con);
+        SqlCommand cmd = new SqlCommand("spaddhoteldetails", obj.con);
         cmd.CommandType = CommandType.StoredProcedure;
-        cmd.Parameters.Add("@flag",2);
-        cmd.Parameters.Add("@city",txtsearch.Text);
+        cmd.Parameters.Add("@flag",3);
+        cmd.Parameters.Add("@City", txtsearch.Text);
         clear();
+
         DataTable dt = new DataTable();
         SqlDataAdapter adt = new SqlDataAdapter(cmd);
         adt.Fill(dt);
-        if(dt.Rows.Count>0)
+        if (dt.Rows.Count > 0)
         {
-            Response.Redirect("~/Guest/nearestshop.aspx");
+            //if (("@City") == txtsearch.Text)
+            
+                Response.Redirect("nearestshop.aspx");
+         }
+            else
+            {
+                txtsearch.Text = "Search another city";
+            }
 
-        }
-        else
-        {
-            txtsearch.Text = "No hotels";
-        }
+        //}
+
+        ////    
+        //else
+        //{
+        //    txtsearch.Text = "No hotels";
+
+        //}
 
     }
-        protected void clear()
-        {
+    protected void clear()
+    {
         txtsearch.Text = "";
-       
-        }
+
+    }
     
        
     
