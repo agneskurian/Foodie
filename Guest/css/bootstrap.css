@@ -1120,6 +1120,7 @@ figure {
 img {
   vertical-align: middle;
     height: 16px;
+    width: 79px;
 }
 .img-responsive,
 .thumbnail > img,

@@ -18,7 +18,7 @@ public partial class Restaurant_addfood : System.Web.UI.Page
         {
             Response.Redirect("~/Guest/FoodieDefault.aspx");
         }
-   
+
     }
     protected int get_id()
     {
@@ -26,7 +26,7 @@ public partial class Restaurant_addfood : System.Web.UI.Page
         int a = 0;
         Class1 obj = new Class1();
         obj.getconnect();
-        SqlCommand cmd = new SqlCommand("spadd", obj.con);
+        SqlCommand cmd = new SqlCommand("spaddfood", obj.con);
         cmd.CommandType = CommandType.StoredProcedure;
         cmd.Parameters.Add("@flag", 1);
         DataTable dt = new DataTable();
@@ -42,8 +42,8 @@ public partial class Restaurant_addfood : System.Web.UI.Page
         }
         id = id + 1;
         return id;
-   
     }
+
     protected void Button1_Click(object sender, EventArgs e)
     {
         Class1 obj = new Class1();
@@ -54,11 +54,10 @@ public partial class Restaurant_addfood : System.Web.UI.Page
         cmd.Parameters.Add("@foodid", get_id());
         cmd.Parameters.Add("@shopid", Session["shopid"].ToString());
         cmd.Parameters.Add("@foodname", txtfname.Text);
-        cmd.Parameters.Add("@category", DropDownList1.Text);
-        cmd.Parameters.Add("@Description", txtdescription.Text);
-        cmd.Parameters.Add("@price", txtprice.Text);
-
+        cmd.Parameters.Add("@categoryid", DropDownList1.SelectedValue.ToString());
+        cmd.Parameters.Add("@description", txtdescription.Text);
         cmd.Parameters.Add("@image", ViewState["filepath"].ToString());
+        cmd.Parameters.Add("@price", txtprice.Text);
         cmd.ExecuteNonQuery();
         clear();
         Response.Write("<script>alert('Inserted Successfully')</script>");
@@ -67,7 +66,7 @@ public partial class Restaurant_addfood : System.Web.UI.Page
     protected void clear()
     {
         txtfname.Text = "";
-        DropDownList1.Text = "";
+       // DropDownList1.Text = "";
         txtdescription.Text = "";
         txtprice.Text = "";
     }

@@ -66,7 +66,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
                 
 <%--     <asp:TextBox ID="txtsearch" runat="server"></asp:TextBox>--%>
-            
+       <div >
+            <h4><a href="contact.aspx">Contact Us</a></h4>
+		</div>
+		     
     </div>
 		<div class="product_list_header">  
                 <fieldset>
@@ -132,11 +135,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                    <asp:Label ID="Label1" runat="server" Text="  Select Neede City  "></asp:Label> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="SqlDataSource1" DataTextField="City" DataValueField="City" Width="450px" Height="39px"></asp:DropDownList>  <asp:Button ID="Button1" runat="server" Text="Submit" UseSubmitBehavior="true" class="button" OnClick="Button1_Click" AutoPostBack ="true" BackColor="#66FF66" />
                                     <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:QuickyConnectionString %>"  SelectCommand="SELECT DISTINCT [City] FROM [tbl_add_hotel_details]"></asp:SqlDataSource>
                                     <br />
-                                    <asp:DataList ID="DataList1" runat="server" RepeatColumns="4" DataSourceID="SqlDataSource2"  Visible="False">
+                                    <asp:DataList ID="DataList1" runat="server" DataKeyField="shopid" RepeatColumns="4" DataSourceID="SqlDataSource2"  Visible="False">
                                         <ItemTemplate>
                                             <br />
                                             <br />
-                                              <asp:Image ID="Image1" runat="server"  Height="200px" Width="200px" ImageUrl='<%# Eval("image") %>' />
+                                              <asp:Image ID="Image1" runat="server"  Height="200px" Width="200px" ImageUrl='<%# Eval("image") %>' href="viewproducts.aspx"/></a>
                                                 <br />
                                           <div class="snipcart-item block" >
 
@@ -152,9 +155,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <br />
                                               <br />
                                               </div>
+          
+                                           <a href="viewcategory.aspx?id=<%# Eval("shopid") %>">ViewFoodItems</a>
+
                                         </ItemTemplate>
+
                                     </asp:DataList>
-                                    <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:QuickyConnectionString %>" SelectCommand="SELECT [HotelName], [image], [Location],[Description] FROM [tbl_add_hotel_details] WHERE (([City] = @City) AND ([Status] = @Status))">
+<%--                            <asp:HyperLink ID="HyperLink1" runat="server">View FoodItems</asp:HyperLink>--%>
+                            &nbsp;&nbsp;
+                                    <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:QuickyConnectionString %>" SelectCommand="SELECT [HotelName],[shopid], [image], [Location],[Description] FROM [tbl_add_hotel_details] WHERE (([City] = @City) AND ([Status] = @Status))">
                                         <SelectParameters>
                                             <asp:ControlParameter ControlID="DropDownList1" Name="City" PropertyName="SelectedValue" Type="String" />
                                             <asp:Parameter DefaultValue="Approved" Name="Status" Type="String" />
