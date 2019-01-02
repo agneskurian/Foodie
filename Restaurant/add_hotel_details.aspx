@@ -104,7 +104,7 @@
          </tr>
           <tr>
              <td><div class="form-group"><label class="col-lg-2 control-label">Date</label>&nbsp;</div></td>
-             <td><div class="col-lg-6"><asp:TextBox ID="txtdate" runat="server"  class="form-control" placeholder="" required=""></asp:TextBox>
+             <td><div class="col-lg-6"><asp:TextBox ID="txtdate" runat="server"  class="form-control" placeholder="" required="" TextMode="Date"></asp:TextBox>
                              <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>     
 
                  <br />

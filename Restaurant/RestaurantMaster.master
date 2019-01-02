@@ -75,7 +75,7 @@
                     </div>
                   </div>
                 </a>
-              </li>
+              </li>fi
               <li>
                 <a href="index.html#">
                   <div class="task-info">
@@ -250,8 +250,8 @@
       <div id="sidebar" class="nav-collapse ">
         <!-- sidebar menu start-->
         <ul class="sidebar-menu" id="nav-accordion">
-          <p class="centered"><a href="mlml"><img src="img/" class="img-circle" width="80"/></a></p>
-          <h5 class="centered">Sam Soffes</h5>
+          <p> class="centered"><a href="mlml"><img src="img/" class="img-circle" width="80"/></a></p>
+          <h5> class="centered">Sam Soffes</h5>
           <li class="mt">
             <a class="active" href="RestaurantDefault.aspx">
               <i class="fa fa-dashboard"></i>
@@ -264,11 +264,13 @@
               <span>ADD</span>
               </a>
             <ul class="sub">
-              <li><a href="addprofile.aspx">Profile</a></li>
+<%--              <li><a href="addprofile.aspx">Profile</a></li>--%>
               <li><a href="addfood.aspx">Food</a></li>
               <li><a href="addmenu.aspx">Menu</a></li>
               <li><a href="addempolyee.aspx">Employee</a></li>
               <li><a href="add_hotel_details.aspx">Hotel Profile</a></li>
+              <li><a href="add_category.aspx">Category</a></li>
+
 
             </ul>
           </li>

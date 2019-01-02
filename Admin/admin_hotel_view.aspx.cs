@@ -10,6 +10,11 @@ public partial class Admin_admin_hotel_view : System.Web.UI.Page
     protected void Page_Load(object sender, EventArgs e)
     {
 
+        if (Session["email"].ToString() == "")
+        {
+            Response.Redirect("~/Guest/FoodieDefault.aspx");
+        }
+   
     }
     protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
     {

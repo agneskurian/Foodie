@@ -16,6 +16,33 @@ public partial class Restaurant_add_hotel_details : System.Web.UI.Page
     {
 
     }
+    protected int get_ids()
+    {
+        {
+            int id = 99;
+            int a = 0;
+            Class1 obj = new Class1();
+            obj.getconnect();
+            SqlCommand cmd = new SqlCommand("spaddhoteldetails", obj.con);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.Add("@flag", 1);
+            DataTable dt = new DataTable();
+            SqlDataAdapter adt = new SqlDataAdapter(cmd);
+            adt.Fill(dt);
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                a = Int32.Parse(dt.Rows[i][0].ToString());
+                if (a > id)
+                {
+                    id = a;
+                }
+            }
+            id = id + 1;
+            return id;
+        }
+    }
+  
+  
     protected void Button1_Click(object sender, EventArgs e)
     {
         Class1 obj = new Class1();
@@ -23,6 +50,7 @@ public partial class Restaurant_add_hotel_details : System.Web.UI.Page
         SqlCommand cmd = new SqlCommand("spaddhoteldetails", obj.con);
         cmd.CommandType = CommandType.StoredProcedure;
         cmd.Parameters.Add("@flag",0);
+        cmd.Parameters.Add("@Hoteldetailid",get_ids());
         cmd.Parameters.Add("@shopid", Session["shopid"].ToString());
         cmd.Parameters.Add("@HotelName", txthname.Text);
         cmd.Parameters.Add("@HotelType", DropDownList1.Text);

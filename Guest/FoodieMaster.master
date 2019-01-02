@@ -19,7 +19,7 @@ author URL: http://w3layouts.com
 License: Creative Commons Attribution 3.0 Unported
 License URL: http://creativecommons.org/licenses/by/3.0/
 -->
-<title>Grocery Store a Ecommerce Online Shopping Category Flat Bootstrap Responsive Website Template | Home :: w3layouts</title>
+    <title>Quicky Online Foood Delivery</title>
 <!-- for-mobile-apps -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -55,29 +55,25 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <body>
 <!-- header -->
 	<div class="agileits_header">
-		<div class="w3l_offers">
+		<%--<div class="w3l_offers">
 			<a href="products.html">Today's special Offers !</a>
-		</div>
-		<div class="w3l_search">
+		</div>--%>
+         <form id="form1" runat="server" style="color: #FFFFFF">
+
+		<div class="w3l_search" style="color: #FFFFFF">
 
     
 
- <form id="form1" runat="server">
-                <%--<asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
-                <cc1:ListSearchExtender ID="ListSearchExtender1" runat="server"></cc1:ListSearchExtender>
-                --%>
-                <asp:TextBox ID="txtsearch" runat="server"></asp:TextBox>
-                          <asp:ImageButton ID="ImageButton1" runat="server" Height="41px" ImageUrl="images/search2.jpg" OnClick="ImageButton1_Click" ValidateRequestMode="Disabled" Width="40px"/>		
-     --%>
-		</div>
+                
+<%--     <asp:TextBox ID="txtsearch" runat="server"></asp:TextBox>--%>
+            
+    </div>
 		<div class="product_list_header">  
-			<form action="#" method="post" class="last">
                 <fieldset>
                     <input type="hidden" name="cmd" value="_cart" />
                     <input type="hidden" name="display" value="1" />
                     <input type="submit" name="submit" value="View your cart" class="button" />
                 </fieldset>
-            </form>
 		</div>
 		<div class="w3l_header_right">
 			<ul>
@@ -121,39 +117,82 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<div class="w3ls_logo_products_left">
 				<h1><a href="FoodieDefault.aspx"><span><h1><b>QUICKY</b></h1></span></a></h1>
 			</div>
-			<div class="w3ls_logo_products_left1">
-				<ul class="special_items">
-					<li><a href="events.html">Events</a><i>/</i></li>
-					<li><a href="about.html">About Us</a><i>/</i></li>
-					<li><a href="products.html">Best Deals</a><i>/</i></li>
-					<li><a href="nearestshop.aspx">Services</a></li>
-				</ul>
-			</div>
-			<div class="w3ls_logo_products_left1">
-				<ul class="phone_email">
+				<div class="top-brands">
+
+            		<div class="container">
+
+            			<div class="agile_top_brands_grids">
+
+						<div class="agile_top_brand_center_grid">
+                           
+				
+                                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                           
+				
+                                   <asp:Label ID="Label1" runat="server" Text="  Select Neede City  "></asp:Label> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="SqlDataSource1" DataTextField="City" DataValueField="City" Width="450px" Height="39px"></asp:DropDownList>  <asp:Button ID="Button1" runat="server" Text="Submit" UseSubmitBehavior="true" class="button" OnClick="Button1_Click" AutoPostBack ="true" BackColor="#66FF66" />
+                                    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:QuickyConnectionString %>"  SelectCommand="SELECT DISTINCT [City] FROM [tbl_add_hotel_details]"></asp:SqlDataSource>
+                                    <br />
+                                    <asp:DataList ID="DataList1" runat="server" RepeatColumns="4" DataSourceID="SqlDataSource2"  Visible="False">
+                                        <ItemTemplate>
+                                            <br />
+                                            <br />
+                                              <asp:Image ID="Image1" runat="server"  Height="200px" Width="200px" ImageUrl='<%# Eval("image") %>' />
+                                                <br />
+                                          <div class="snipcart-item block" >
+
+                                             <h3> <asp:Label ID="HotelNameLabel" runat="server" style="color: #990033" Text='<%# Eval("HotelName") %>' /></h3>
+
+                                            <br />                                          
+                                           <h4> <asp:Label ID="LocationLabel" runat="server" Text='<%# Eval("Location") %>' /></h4>
+                                            <br />
+                                           <h5> <asp:Label ID="DescriptionLabel" runat="server" Text='<%# Eval("Description") %>' /></h5>
+                                              <hr />
+                                              <hr/>
+
+<br />
+                                              <br />
+                                              </div>
+                                        </ItemTemplate>
+                                    </asp:DataList>
+                                    <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:QuickyConnectionString %>" SelectCommand="SELECT [HotelName], [image], [Location],[Description] FROM [tbl_add_hotel_details] WHERE (([City] = @City) AND ([Status] = @Status))">
+                                        <SelectParameters>
+                                            <asp:ControlParameter ControlID="DropDownList1" Name="City" PropertyName="SelectedValue" Type="String" />
+                                            <asp:Parameter DefaultValue="Approved" Name="Status" Type="String" />
+                                        </SelectParameters>
+                                    </asp:SqlDataSource>
+                            </div>
+
+                      	</div>
+
+                  </div>
+
+<%--            			</div>--%>
+
+
+            	</div>
+				<%--<ul class="phone_email">
 					<li><i class="fa fa-phone" aria-hidden="true"></i>(+0123) 234 567</li>
 					<li><i class="fa fa-envelope-o" aria-hidden="true"></i><a href="mailto:store@grocery.com">store@grocery.com</a></li>
-				</ul>
+				</ul>--%>
 			</div>
 			<div class="clearfix"> </div>
 		</div>
-	</div>
+<%--	</div>--%>
 <!-- //header -->
 <!-- banner -->
     
-		<div class="w3l_banner_nav_right">
+		<div class="w3l_banner_nav_center">
 			<section class="slider">
 				<div class="flexslider">
-					<ul class="slides">
-						<li>
+<%--					<ul class="slides">--%>
+						
 							<div class="w3l_banner_nav_right_banner">
 								<h3>Make your <span>food</span> with Spicy.</h3>
-								<div class="more">
-									<a href="products.html" class="button--saqui button--round-l button--text-thick" data-text="Shop now">Shop now</a>
-								</div>
+							<div class="more">
+                                                          </div>
 							</div>
-						</li>
-						<li>
+						
+						<%--<li>
 							<div class="w3l_banner_nav_right_banner1">
 								<h3>Make your <span>food</span> with Spicy.</h3>
 								<div class="more">
@@ -169,7 +208,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								</div>
 							</div>
 						</li>
-					</ul>
+					</ul>--%>
 				</div>
 			</section>
 			<!-- flexSlider -->
@@ -192,58 +231,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!-- banner -->           
      <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
 
-	<div class="w3l_banner_nav_right">
-			<div class="w3l_banner_nav_right_banner3_btm">
-				<div class="col-md-4 w3l_banner_nav_right_banner3_btml">
-					<div class="view view-tenth">
-						<img src="images/13.jpg" alt=" " class="img-responsive" />
-						<div class="mask">
-							<h4>Grocery Store</h4>
-							<p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt.</p>
-						</div>
-					</div>
-					<h4>Utensils</h4>
-					<ol>
-						<li>sunt in culpa qui officia</li>
-						<li>commodo consequat</li>
-						<li>sed do eiusmod tempor incididunt</li>
-					</ol>
-				</div>
-				<div class="col-md-4 w3l_banner_nav_right_banner3_btml">
-					<div class="view view-tenth">
-						<img src="images/14.jpg" alt=" " class="img-responsive" />
-						<div class="mask">
-							<h4>Grocery Store</h4>
-							<p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt.</p>
-						</div>
-					</div>
-					<h4>Hair Care</h4>
-					<ol>
-						<li>enim ipsam voluptatem officia</li>
-						<li>tempora incidunt ut labore et</li>
-						<li>vel eum iure reprehenderit</li>
-					</ol>
-				</div>
-				<div class="col-md-4 w3l_banner_nav_right_banner3_btml">
-					<div class="view view-tenth">
-						<img src="images/15.jpg" alt=" " class="img-responsive" />
-						<div class="mask">
-							<h4>Grocery Store</h4>
-							<p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt.</p>
-						</div>
-					</div>
-					<h4>Cookies</h4>
-					<ol>
-						<li>dolorem eum fugiat voluptas</li>
-						<li>ut aliquid ex ea commodi</li>
-						<li>magnam aliquam quaerat</li>
-					</ol>
-				</div>
-				<div class="clearfix"> </div>
-			</div>
-		
-        </div>
-                                 </asp:ContentPlaceHolder>
+	                             </asp:ContentPlaceHolder>
 
     			</form>
 

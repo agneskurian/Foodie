@@ -14,6 +14,53 @@ public partial class Guest_shopreg : System.Web.UI.Page
     {
 
     }
+    protected int get_id()
+    {
+        int id = 0;
+        Class1 obj = new Class1();
+        obj.getconnect();
+        SqlCommand cmd = new SqlCommand("spshopregister", obj.con);
+        cmd.CommandType = CommandType.StoredProcedure;
+        cmd.Parameters.Add("@flag", 1);
+        DataTable dt = new DataTable();
+        SqlDataAdapter adt = new SqlDataAdapter(cmd);
+        adt.Fill(dt);
+        for (int i = 0; i < dt.Rows.Count; i++)
+        {
+            id = Int32.Parse(dt.Rows[i][0].ToString());
+        }
+        id = id + 1;
+
+        return id;
+
+    }
+    protected int get_ids()
+    {
+        {
+            int id = 99;
+            int a = 0;
+            Class1 obj = new Class1();
+            obj.getconnect();
+            SqlCommand cmd = new SqlCommand("spshoplogin", obj.con);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.Add("@flag", 1);
+            DataTable dt = new DataTable();
+            SqlDataAdapter adt = new SqlDataAdapter(cmd);
+            adt.Fill(dt);
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                a = Int32.Parse(dt.Rows[i][0].ToString());
+                if (a > id)
+                {
+                    id = a;
+                }
+            }
+            id = id + 1;
+            return id;
+        }
+    }
+  
+  
     protected void Button1_Click(object sender, EventArgs e)
     {
 
@@ -22,6 +69,7 @@ public partial class Guest_shopreg : System.Web.UI.Page
         SqlCommand cmd = new SqlCommand("spshoplogin", obj.con);
         cmd.CommandType = CommandType.StoredProcedure;
         cmd.Parameters.Add("@flag",0);
+        cmd.Parameters.Add("@shoploginid", get_ids());
         cmd.Parameters.Add("@shopid", txtshopid.Text);
         cmd.Parameters.Add("@password", txtpass.Text);
         cmd.Parameters.Add("@usertype", "Shop");
@@ -31,6 +79,7 @@ public partial class Guest_shopreg : System.Web.UI.Page
         SqlCommand cmd1 = new SqlCommand("spshopregister", obj.con);
         cmd1.CommandType = CommandType.StoredProcedure;
         cmd1.Parameters.Add("@flag",0);
+        cmd1.Parameters.Add("@shopregid",get_id());
         cmd1.Parameters.Add("@shopid", txtshopid.Text);
         //cmd1.Parameters.Add("@shopname", txtsname.Text);
         //cmd1.Parameters.Add("@city", txtcity.Text);

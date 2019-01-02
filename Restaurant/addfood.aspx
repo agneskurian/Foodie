@@ -22,19 +22,16 @@
             </td>
 
          </tr>
+        
           <tr>
              <td class="auto-style1"><div class="form-group"><label class="col-lg-2 control-label">Category</label>&nbsp;</div>
 
              </td>
              <td class="auto-style1"><div class="col-lg-6">
-                 <asp:DropDownList ID="DropDownList1" class="form-control" runat="server">
-                     <asp:ListItem>Select</asp:ListItem>
-                     <asp:ListItem>BreakFast</asp:ListItem>
-                     <asp:ListItem>Lunch</asp:ListItem>
-                     <asp:ListItem>Dinner</asp:ListItem>
-                     <asp:ListItem>Non-Veg</asp:ListItem>
-
+                 <asp:DropDownList ID="DropDownList1" class="form-control" runat="server" DataSourceID="SqlDataSource1" DataTextField="categoryname" DataValueField="categoryid">
+                     
                  </asp:DropDownList>
+                 <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:QuickyConnectionString %>" SelectCommand="SELECT [categoryid], [categoryname] FROM [tbl_category]"></asp:SqlDataSource>
                  <br />
                  </div></td>
          </tr>
@@ -48,7 +45,7 @@
                 
                 <asp:Button ID="Button2" runat="server" Text="Upload" OnClick="Button2_Click"/>
                  <br />
-                <asp:Image ID="Image1" runat="server" Width="100px" />                
+                <asp:Image ID="Image1" runat="server" Width="100px" Height="150" />                
                 
 
 <%--             &nbsp;<asp:TextBox ID="txtimg" runat="server"  class="form-control" placeholder=""></asp:TextBox>--%>
@@ -63,7 +60,7 @@
     
 
 
-         <tr>
+       <%--  <tr>
              <td><div class="form-group"><label class="col-lg-2 control-label">Availability</label>&nbsp;</div>
 
              </td>
@@ -78,7 +75,7 @@
                  <br />
                  </div></td>
          </tr>
-         <tr>
+       --%>  <tr>
              <td><div class="form-group"><label class="col-lg-2 control-label">Price</label>&nbsp;</div>
 
              </td>

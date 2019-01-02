@@ -22,13 +22,13 @@
         <br/>
     <br/>
 
-    Send a message<asp:TextBox ID="TextBox1" runat="server" Height="32px" Width="246px" OnTextChanged="TextBox1_TextChanged" style="margin-left: 46px" TextMode="MultiLine"></asp:TextBox>
+    Send Notification<asp:TextBox ID="TextBox1" runat="server" Height="32px" Width="246px" OnTextChanged="TextBox1_TextChanged" style="margin-left: 46px" TextMode="MultiLine"></asp:TextBox>
 
 
 <br />
 <br />
 <br />
-<asp:Button ID="Button1" runat="server" Height="33px" OnClick="Button1_Click" Text="Send message" />
+<asp:Button ID="Button1" runat="server" Height="33px" OnClick="Button1_Click" Text="Send notification" />
 <br />
 <br />
 <br />

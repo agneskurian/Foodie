@@ -37,10 +37,14 @@ html[xmlns] .slides {display: block;}
 /* FlexSlider Default Theme
 *********************************/
 .flexslider {
-	border: 0px;
-	position: relative;
+	border-style: none;
+    border-color: inherit;
+    border-width: 0px;
+    position: relative;
 	zoom: 1;
 	overflow: hidden;
+    top: 0px;
+    left: 0px;
 }
 .flex-viewport {max-height: 2000px; -webkit-transition: all 1s ease; -moz-transition: all 1s ease; transition: all 1s ease;}
 .loading .flex-viewport {max-height: 300px;}

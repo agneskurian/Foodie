@@ -10,7 +10,7 @@ using System.Data;
 using System.Configuration;
 
 
-public partial class Restaurant_addmenu : System.Web.UI.Page
+public partial class Restaurant_add_category : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
@@ -18,7 +18,7 @@ public partial class Restaurant_addmenu : System.Web.UI.Page
         {
             Response.Redirect("~/Guest/FoodieDefault.aspx");
         }
-   
+
     }
     protected int get_id()
     {
@@ -26,7 +26,7 @@ public partial class Restaurant_addmenu : System.Web.UI.Page
         int a = 0;
         Class1 obj = new Class1();
         obj.getconnect();
-        SqlCommand cmd = new SqlCommand("spaddmenu", obj.con);
+        SqlCommand cmd = new SqlCommand("spaddcategory", obj.con);
         cmd.CommandType = CommandType.StoredProcedure;
         cmd.Parameters.Add("@flag", 1);
         DataTable dt = new DataTable();
@@ -44,49 +44,44 @@ public partial class Restaurant_addmenu : System.Web.UI.Page
         return id;
     }
 
-    protected void Button2_Click(object sender, EventArgs e)
+    protected void Button1_Click(object sender, EventArgs e)
     {
         Class1 obj = new Class1();
         obj.getconnect();
-        SqlCommand cmd = new SqlCommand("spaddmenu", obj.con);
+        SqlCommand cmd = new SqlCommand("spaddcategory", obj.con);
         cmd.CommandType = CommandType.StoredProcedure;
+        cmd.Parameters.Add("@flag", 0);
+        cmd.Parameters.Add("@categoryid", get_id());
         cmd.Parameters.Add("@shopid", Session["shopid"].ToString());
-        cmd.Parameters.Add("@menuid",get_id());
-        cmd.Parameters.Add("@image", ViewState["filepath"].ToString());
+        cmd.Parameters.Add("@categoryname",txtcname.Text);
         cmd.ExecuteNonQuery();
-        //clear();
-        Response.Write("<script>alert('Inserted Successfully')</script>");
-
-       
-    }
-    protected void Button1_Click(object sender, EventArgs e)
-    {
-         if (FileUpload1.HasFile)
+        SqlCommand cmd1 = new SqlCommand("spaddcategory", obj.con);
+        cmd1.CommandType = CommandType.StoredProcedure;
+        cmd1.Parameters.Add("@flag", 2);
+        cmd1.Parameters.Add("@categoryname", txtcname.Text);
+        DataTable dt = new DataTable();
+        SqlDataAdapter adt = new SqlDataAdapter(cmd1);
+        adt.Fill(dt);
+        if (dt.Rows.Count > 0)
         {
-            String filename = Path.Combine(Server.MapPath("~/images1/"), FileUpload1.FileName);
-            String strExtension = Path.GetExtension(FileUpload1.FileName);
-            if (strExtension == ".jpg" || strExtension == ".bmp" || strExtension == ".gif")
-            {
-                FileUpload1.SaveAs(filename);
-
-                Image1.ImageUrl = "~/images1/" + FileUpload1.FileName;
-                ViewState["filepath"] = Image1.ImageUrl;
-            }
-            else
-            {
-                Response.Write("<script>alert('Select a valid image')</script>");
-            }
+            Response.Write("<script>alert('Category already exist')</script>");
 
         }
         else
         {
-
-            Response.Write("<script>alert('Upload image')</script>");
-
+            cmd1.ExecuteNonQuery();
+            //obj.closeconnect();
+            Response.Write("<script>alert('category added succesfully')</script>");
+            clear();
         }
 
+        clear();
+        Response.Write("<script>alert('Inserted Successfully')</script>");
 
     }
-      
-    
+    protected void clear()
+    {
+        txtcname.Text = "";
+    }
+   
 }

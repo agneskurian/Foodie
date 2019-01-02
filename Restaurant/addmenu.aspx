@@ -7,8 +7,16 @@
                         <h4 class="mb">Add Menu</h4>
                     
      <table class="nav-justified">
+          <%--<tr>
+             <td><div class="form-group">
+             <label class="col-lg-2 control-label">Shop Name</label>&nbsp;</div>
+             </td>
+             <td><div class="col-lg-6">
+             &nbsp;<asp:TextBox ID="txtsname" runat="server" Text="'<%# Eval("HoteName") %>'" class="form-control" placeholder=""></asp:TextBox></div>
+            </td>
 
-             <tr>
+         </tr>
+          --%>  <tr>
             
              <td><div class="form-group"><label class="col-lg-2 control-label">Image</label>&nbsp;</div>
 

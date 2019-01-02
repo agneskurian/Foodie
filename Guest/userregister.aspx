@@ -1,10 +1,10 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="contact.aspx.cs" Inherits="Guest_contact" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="userregister.aspx.cs" Inherits="Guest_userregister" %>
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title>Quicky Online Foood Delivery</title>
+<title>Grocery Store a Ecommerce Online Shopping Category Flat Bootstrap Responsive Website Template | Sign In & Sign Up :: w3layouts</title>
 <!-- for-mobile-apps -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -109,52 +109,60 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			</div>
 			<div class="w3ls_logo_products_left1">
 				<ul class="phone_email">
-					<li><i class="fa fa-phone" aria-hidden="true"></i>(+0123) 234 567</li>
-					<li><i class="fa fa-envelope-o" aria-hidden="true"></i><a href="mailto:store@grocery.com">store@grocery.com</a></li>
+					<li><i class="fa fa-phone" aria-hidden="true"></i>(+91) 1231 234 567</li>
+					<li><i class="fa fa-envelope-o" aria-hidden="true"></i><a href="quicky@gmail.com">quicky.com</a></li>
 				</ul>
 			</div>
 			<div class="clearfix"> </div>
 		</div>
 	</div>
+<!-- //header -->
+<!-- products-breadcrumb -->
+	<div class="products-breadcrumb">
+		<div class="container">
+			<ul>
+				<li><i class="fa fa-home" aria-hidden="true"></i><a href="index.html">Home</a><span>|</span></li>
+				<li>Sign In & Sign Up</li>
+			</ul>
+		</div>
+	</div>
 
-    
+   <div class="w3_login">
+               <form id="form1" runat="server">
 
-    <div class="mail">
-			<h3>Mail Us</h3>
-			<div class="agileinfo_mail_grids">
-				<div class="col-md-4 agileinfo_mail_grid_left">
-					<ul>
-						<li><i class="fa fa-home" aria-hidden="true"></i></li>
-						<li>address<span>868 Nearest to new Bus stand.</span></li>
-					</ul>
-					<ul>
-						<li><i class="fa fa-envelope" aria-hidden="true"></i></li>
-						<li>email<span><a href="mailto:info@example.com">quicky102@gmail.com</a></span></li>
-					</ul>
-					<ul>
-						<li><i class="fa fa-phone" aria-hidden="true"></i></li>
-						<li>call to us<span>(+91)9497413003</span></li>
-					</ul>
+			<h3>Sign In & Sign Up</h3>
+			<div class="w3_login_module">
+				<div class="module form-module">
+				  <div class="toggle"><i class="fa fa-times fa-pencil"></i>
+					<div class="tooltip"><a href="FoodieDefault.aspx">Home</a></div>
+				  </div>
+				<
+				  <div class="form">
+					<h2>Create an account</h2>
+                      <asp:TextBox ID="txtname" runat="server"  placeholder="Full Name" required=" "></asp:TextBox>
+                      <asp:TextBox ID="txtemail" runat="server"  placeholder="Username" required=" "></asp:TextBox>
+                      <asp:TextBox ID="txtpass" runat="server"  placeholder="Password" required=" "></asp:TextBox>
+                      <asp:TextBox ID="txtcpass" runat="server"  placeholder="Retype Password" required=" "></asp:TextBox>
+                      <asp:Button ID="Button1" runat="server" Text="Register" />
+				  </div>
+				  <div class="cta"><a href="#">Forgot your password?</a></div>
 				</div>
-				<div class="col-md-8 agileinfo_mail_grid_right">
-                     <form id="form1" runat="server">
-						<div class="col-md-6 wthree_contact_left_grid">
-                            <asp:TextBox ID="txtname" runat="server" placeholder="Name" required=""></asp:TextBox>
-                            <asp:TextBox ID="txtemail" runat="server" placeholder="Email" required=""></asp:TextBox>
-
-						</div>
-						<div class="col-md-6 wthree_contact_center_grid">
-                        <asp:TextBox ID="txtphone" runat="server" placeholder="Phone" required=""></asp:TextBox>
-                        </div>
-						<div class="clearfix"> </div>
-                         <asp:TextBox ID="txtmsg" runat="server" TextMode="MultiLine" placeholder="Message" required=""></asp:TextBox>
-                         <asp:Button ID="Button1" runat="server" Text="Submit" OnClick="Button1_Click" />
-                         <asp:Button ID="Button2" runat="server" Text="Cancel" />
-
-					</form>
-				</div>
-				<div class="clearfix"> </div>
 			</div>
+       					  </form>
+
+			<script>
+			    $('.toggle').click(function () {
+			        // Switches the Icon
+			        $(this).children('i').toggleClass('fa-pencil');
+			        // Switches the forms  
+			        $('.form').animate({
+			            height: "toggle",
+			            'padding-top': 'toggle',
+			            'padding-bottom': 'toggle',
+			            opacity: "toggle"
+			        }, "slow");
+			    });
+			</script>
 		</div>
 </body>
 </html>

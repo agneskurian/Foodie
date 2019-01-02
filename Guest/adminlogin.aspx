@@ -4,7 +4,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title>Grocery Store a Ecommerce Online Shopping Category Flat Bootstrap Responsive Website Template | Sign In & Sign Up :: w3layouts</title>
+    <title>Quicky Online Foood Delivery</title>
 <!-- for-mobile-apps -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -63,7 +63,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					  <input type="submit" value="Register">
 					</form>
 				  </div>--%>
-                   <div class="cta"><a href="shopreg.aspx">New Shop?</a></div>
 				  <div class="cta"><a href="#">Forgot your password?</a></div>
 				</div>
 			</div>

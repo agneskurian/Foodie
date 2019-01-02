@@ -4,7 +4,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title>Grocery Store a Ecommerce Online Shopping Category Flat Bootstrap Responsive Website Template | Sign In & Sign Up :: w3layouts</title>
+    <title>Quicky Online Foood Delivery</title>
 <!-- for-mobile-apps -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -43,16 +43,18 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<h3>Sign In & Sign Up</h3>
 			<div class="w3_login_module">
 				<div class="module form-module">
-<%--				  <div class="toggle"><i class="fa fa-times fa-pencil"></i>--%>
-				<div></div>
+			  <div class="toggle"><i class="fa fa-times fa-pencil"></i>
+                  	<div class="tooltip"><a href="FoodieDefault.aspx">Home</a></div>
+
+				</div>
 				 <div class="form">
 					<h2>Login to your account</h2>
                         <asp:TextBox ID="txtshopid" runat="server" placeholder="ShopId"></asp:TextBox>
                        <%-- <asp:TextBox ID="txtsname" runat="server" placeholder="ShopName"></asp:TextBox>
                         <asp:TextBox ID="txtcity" runat="server" placeholder="City"></asp:TextBox>
-                       --%> <asp:TextBox ID="txtemail" runat="server" placeholder="email"></asp:TextBox>
-                        <asp:TextBox ID="txtpass" runat="server" placeholder="Password"></asp:TextBox>
-                        <asp:TextBox ID="txtcpass" runat="server" placeholder="Retype Password"></asp:TextBox>
+                       --%> <asp:TextBox ID="txtemail" runat="server" placeholder="email" TextMode="Email"></asp:TextBox>
+                        <asp:TextBox ID="txtpass" runat="server" placeholder="Password" TextMode="Password"></asp:TextBox>
+                        <asp:TextBox ID="txtcpass" runat="server" placeholder="Retype Password" TextMode="Password"></asp:TextBox>
                         <asp:Button ID="Button1" runat="server" Text="Register" OnClick="Button1_Click" />			
 <%--                        <asp:Button ID="Button2" runat="server" Text="Home" OnClick="Button1_Click" />			--%>
 
