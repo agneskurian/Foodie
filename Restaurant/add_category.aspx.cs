@@ -54,26 +54,27 @@ public partial class Restaurant_add_category : System.Web.UI.Page
         cmd.Parameters.Add("@categoryid", get_id());
         cmd.Parameters.Add("@shopid", Session["shopid"].ToString());
         cmd.Parameters.Add("@categoryname",txtcname.Text);
+        cmd.Parameters.Add("@image", ViewState["filepath"].ToString());
         cmd.ExecuteNonQuery();
-        SqlCommand cmd1 = new SqlCommand("spaddcategory", obj.con);
-        cmd1.CommandType = CommandType.StoredProcedure;
-        cmd1.Parameters.Add("@flag", 2);
-        cmd1.Parameters.Add("@categoryname", txtcname.Text);
-        DataTable dt = new DataTable();
-        SqlDataAdapter adt = new SqlDataAdapter(cmd1);
-        adt.Fill(dt);
-        if (dt.Rows.Count > 0)
-        {
-            Response.Write("<script>alert('Category already exist')</script>");
+        //SqlCommand cmd1 = new SqlCommand("spaddcategory", obj.con);
+        //cmd1.CommandType = CommandType.StoredProcedure;
+        //cmd1.Parameters.Add("@flag", 2);
+        //cmd1.Parameters.Add("@categoryname", txtcname.Text);
+        //DataTable dt = new DataTable();
+        //SqlDataAdapter adt = new SqlDataAdapter(cmd1);
+        //adt.Fill(dt);
+        //if (dt.Rows.Count > 0)
+        //{
+        //    Response.Write("<script>alert('Category already exist')</script>");
 
-        }
-        else
-        {
-            cmd1.ExecuteNonQuery();
-            //obj.closeconnect();
-            Response.Write("<script>alert('category added succesfully')</script>");
-            clear();
-        }
+        //}
+        //else
+        //{
+        //    cmd1.ExecuteNonQuery();
+        //    //obj.closeconnect();
+        //    Response.Write("<script>alert('category added succesfully')</script>");
+        //    clear();
+        //}
 
         clear();
         Response.Write("<script>alert('Inserted Successfully')</script>");
@@ -83,5 +84,36 @@ public partial class Restaurant_add_category : System.Web.UI.Page
     {
         txtcname.Text = "";
     }
-   
+
+    protected void Button3_Click(object sender, EventArgs e)
+    {
+ if (FileUpload1.HasFile)
+        {
+            String filename = Path.Combine(Server.MapPath("~/images1/"), FileUpload1.FileName);
+            String strExtension = Path.GetExtension(FileUpload1.FileName);
+            if (strExtension == ".jpg" || strExtension == ".bmp" || strExtension == ".gif")
+            {
+                FileUpload1.SaveAs(filename);
+
+                Image1.ImageUrl = "~/images1/" + FileUpload1.FileName;
+                ViewState["filepath"] = Image1.ImageUrl;
+            }
+
+            else
+            {
+                Response.Write("<script>alert('Select a valid image')</script>");
+            }
+
+        }
+        else
+        {
+
+            Response.Write("<script>alert('Upload image')</script>");
+
+        }
+
+
+
+    }
+    
 }

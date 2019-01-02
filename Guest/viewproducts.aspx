@@ -5,28 +5,24 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
     <asp:DataList ID="DataList1" runat="server" DataKeyField="foodid" DataSourceID="SqlDataSource1">
         <ItemTemplate>
-            foodid:
-            <asp:Label ID="foodidLabel" runat="server" Text='<%# Eval("foodid") %>' />
+            <asp:Image ID="Image1" runat="server" Height="200px" ImageUrl='<%# Eval("image") %>' />
             <br />
-            shopid:
-            <asp:Label ID="shopidLabel" runat="server" Text='<%# Eval("shopid") %>' />
+            <h4><asp:Label ID="foodnameLabel" runat="server" style="color: #990033" Text='<%# Eval("foodname") %>' /></h4> 
             <br />
-            foodname:
-            <asp:Label ID="foodnameLabel" runat="server" Text='<%# Eval("foodname") %>' />
-            <br />
-            categoryid:
+           <%-- categoryid:
             <asp:Label ID="categoryidLabel" runat="server" Text='<%# Eval("categoryid") %>' />
             <br />
             image:
             <asp:Label ID="imageLabel" runat="server" Text='<%# Eval("image") %>' />
             <br />
-            description:
+           --%> 
+           <div class="w3agile_description">
+             description:
             <asp:Label ID="descriptionLabel" runat="server" Text='<%# Eval("description") %>' />
             <br />
             price:
             <asp:Label ID="priceLabel" runat="server" Text='<%# Eval("price") %>' />
             <br />
-            <asp:Image ID="Image1" runat="server" Height="100px" ImageUrl='<%# Eval("image") %>' />
 <br />
         </ItemTemplate>
     </asp:DataList>

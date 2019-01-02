@@ -141,7 +141,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                             <br />
                                               <asp:Image ID="Image1" runat="server"  Height="200px" Width="200px" ImageUrl='<%# Eval("image") %>' href="viewproducts.aspx"/></a>
                                                 <br />
-                                          <div class="snipcart-item block" >
+                                          <%--<div class="snipcart-item block" >--%>
 
                                              <h3> <asp:Label ID="HotelNameLabel" runat="server" style="color: #990033" Text='<%# Eval("HotelName") %>' /></h3>
 
@@ -149,14 +149,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                            <h4> <asp:Label ID="LocationLabel" runat="server" Text='<%# Eval("Location") %>' /></h4>
                                             <br />
                                            <h5> <asp:Label ID="DescriptionLabel" runat="server" Text='<%# Eval("Description") %>' /></h5>
-                                              <hr />
-                                              <hr/>
-
-<br />
                                               <br />
-                                              </div>
           
-                                           <a href="viewcategory.aspx?id=<%# Eval("shopid") %>">ViewFoodItems</a>
+                                           <a href="viewcategory.aspx?id=<%# Eval("shopid") %>">View More</a>
 
                                         </ItemTemplate>
 
