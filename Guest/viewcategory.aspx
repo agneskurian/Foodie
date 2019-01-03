@@ -9,6 +9,7 @@
                 
     <asp:DataList ID="DataList1" runat="server" DataKeyField="shopid" RepeatColumns="3" DataSourceID="SqlDataSource2" HorizontalAlign="Center">
         <ItemTemplate>
+           
             <br />
             <table class="nav-justified">
                 <tr>
@@ -22,14 +23,13 @@
                     </td>
                 </tr>
                 <tr>
-                    <td><a href='viewproducts.aspx?id=<%# Eval("shopid") %>&amp;catid=<%# Eval("categoryid") %>'>ViewFoodItems</a>&nbsp;</td>
+                    <td><a href='Defaultd.aspx?id=<%# Eval("shopid") %>&amp;catid=<%# Eval("categoryid") %>'>ViewFoodItems</a>&nbsp;</td>
                 </tr>
             </table>
 
 
 
-
-        </ItemTemplate>
+			</ItemTemplate>
     </asp:DataList>
 </div>
                             </div>

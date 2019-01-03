@@ -24,6 +24,8 @@
             <asp:Label ID="priceLabel" runat="server" Text='<%# Eval("price") %>' />
             <br />
 <br />
+
+
         </ItemTemplate>
     </asp:DataList>
     <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:QuickyConnectionString %>" SelectCommand="SELECT * FROM [tbl_add_fooditems] WHERE (([shopid] = @shopid) AND ([categoryid] = @categoryid))">
