@@ -151,7 +151,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                            <h5> <asp:Label ID="DescriptionLabel" runat="server" Text='<%# Eval("Description") %>' /></h5>
                                               <br />
           
-                                           <a href="viewcategory.aspx?id=<%# Eval("shopid") %>">View More</a>
+                                           <a href="Defaultd.aspx?id=<%# Eval("shopid") %>">View More</a>
 
                                         </ItemTemplate>
 

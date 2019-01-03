@@ -23,7 +23,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td><a href='Defaultd.aspx?id=<%# Eval("shopid") %>&amp;catid=<%# Eval("categoryid") %>'>ViewFoodItems</a>&nbsp;</td>
+                    <td><a href='viewproducts.aspx?id=<%# Eval("shopid") %>&amp;catid=<%# Eval("categoryid") %>'>ViewFoodItems</a>&nbsp;</td>
                 </tr>
             </table>
 
