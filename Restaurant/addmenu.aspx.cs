@@ -50,6 +50,7 @@ public partial class Restaurant_addmenu : System.Web.UI.Page
         obj.getconnect();
         SqlCommand cmd = new SqlCommand("spaddmenu", obj.con);
         cmd.CommandType = CommandType.StoredProcedure;
+        cmd.Parameters.Add("@flag", 0);
         cmd.Parameters.Add("@shopid", Session["shopid"].ToString());
         cmd.Parameters.Add("@menuid",get_id());
         cmd.Parameters.Add("@image", ViewState["filepath"].ToString());

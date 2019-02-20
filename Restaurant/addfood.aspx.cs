@@ -26,7 +26,7 @@ public partial class Restaurant_addfood : System.Web.UI.Page
         int a = 0;
         Class1 obj = new Class1();
         obj.getconnect();
-        SqlCommand cmd = new SqlCommand("spaddfood", obj.con);
+        SqlCommand cmd = new SqlCommand("spaddemployee", obj.con);
         cmd.CommandType = CommandType.StoredProcedure;
         cmd.Parameters.Add("@flag", 1);
         DataTable dt = new DataTable();

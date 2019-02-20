@@ -270,6 +270,8 @@
               <li><a href="addempolyee.aspx">Employee</a></li>
               <li><a href="add_hotel_details.aspx">Hotel Profile</a></li>
               <li><a href="add_category.aspx">Category</a></li>
+              <li><a href="hotelref.aspx">HotelReference</a></li>
+
 
 
             </ul>
@@ -284,8 +286,8 @@
               <li><a href="view_hotel_details.aspx">Shop Profile</a></li>
               <li><a href="viewfood.aspx">Food</a></li>
               <li><a href="viewstatus.aspx">Status</a></li>
-              <li><a href="dropzone.html">Dropzone File Upload</a></li>
-              <li><a href="inline_editor.html">Inline Editor</a></li>
+              <li><a href="viewhotelref.aspx">HotelReference</a></li>
+              <li><a href="viewmenu.aspx">Menu</a></li>
               <li><a href="file_upload.html">Multiple File Upload</a></li>
             </ul>
           </li>

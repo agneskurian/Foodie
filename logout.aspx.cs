@@ -18,7 +18,7 @@ public partial class logout : System.Web.UI.Page
     protected void Page_Load(object sender, EventArgs e)
     {
         Session["shopid"] = "";
-        Response.Cache.SetExpires(DateTime.UtcNow.AddMinutes(-1));
+        Response.Cache.SetExpires(DateTime.UtcNow.AddMinutes(-1));http://localhost:62758/logout.aspx.cs
         Response.Cache.SetCacheability(HttpCacheability.NoCache);
         Response.Redirect("~/Guest/FoodieDefault.aspx");
 

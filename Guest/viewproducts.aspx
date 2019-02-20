@@ -7,7 +7,7 @@
 
 
 
-     <asp:DataList ID="DataList1" runat="server" DataKeyField="foodid" DataSourceID="SqlDataSource1" RepeatColumns="2">
+     <asp:DataList ID="DataList1" runat="server" DataKeyField="foodid" DataSourceID="SqlDataSource1" RepeatColumns="2" OnSelectedIndexChanged="DataList1_SelectedIndexChanged">
                  <ItemTemplate>
                      		<div class="services">
 
@@ -24,7 +24,7 @@
 						<li> <asp:Label ID="priceLabel" runat="server" Text='<%# Eval("price") %>' /></li>
 					</ul>
                     <br />
-					<a href="purchase.aspx">Addtocart</a>
+					<a href="purchase.aspx?id=<%# Eval("shopid") %>&amp;catid=<%# Eval("categoryid") %> &amp;fid=<%# Eval("foodid") %>'">Addtocart</a>
 				</div>
 				<div class="clearfix"> </div>
 			</div>

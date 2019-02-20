@@ -39,117 +39,43 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	
 <body>
 <!-- header -->
-	<div class="agileits_header">
-		<div class="w3l_offers">
-			<a href="products.html">Today's special Offers !</a>
-		</div>
-		<div class="w3l_search">
-			<form action="#" method="post">
-				<input type="text" name="Product" value="Search a product..." onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search a product...';}" required="">
-				<input type="submit" value=" ">
-			</form>
-		</div>
-		<div class="product_list_header">  
-			<form action="#" method="post" class="last">
-                <fieldset>
-                    <input type="hidden" name="cmd" value="_cart" />
-                    <input type="hidden" name="display" value="1" />
-                    <input type="submit" name="submit" value="View your cart" class="button" />
-                </fieldset>
-            </form>
-		</div>
-		<div class="w3l_header_right">
-			<ul>
-				<li class="dropdown profile_details_drop">
-					<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user" aria-hidden="true"></i><span class="caret"></span></a>
-					<div class="mega-dropdown-menu">
-						<div class="w3ls_vegetables">
-							<ul class="dropdown-menu drp-mnu">
-								<li><a href="login.html">Login</a></li> 
-								<li><a href="login.html">Sign Up</a></li>
-							</ul>
-						</div>                  
-					</div>	
-				</li>
-			</ul>
-		</div>
-		<div class="w3l_header_right1">
-			<h2><a href="mail.html">Contact Us</a></h2>
-		</div>
-		<div class="clearfix"> </div>
-	</div>
-<!-- script-for sticky-nav -->
-	<script>
-	    $(document).ready(function () {
-	        var navoffeset = $(".agileits_header").offset().top;
-	        $(window).scroll(function () {
-	            var scrollpos = $(window).scrollTop();
-	            if (scrollpos >= navoffeset) {
-	                $(".agileits_header").addClass("fixed");
-	            } else {
-	                $(".agileits_header").removeClass("fixed");
-	            }
-	        });
-
-	    });
-	</script>
-<!-- //script-for sticky-nav -->
-	<div class="logo_products">
-		<div class="container">
-			<div class="w3ls_logo_products_left">
-				<h1><a href="index.html"><span>Grocery</span> Store</a></h1>
-			</div>
-			<div class="w3ls_logo_products_left1">
-				<ul class="special_items">
-					<li><a href="events.html">Events</a><i>/</i></li>
-					<li><a href="about.html">About Us</a><i>/</i></li>
-					<li><a href="products.html">Best Deals</a><i>/</i></li>
-					<li><a href="services.html">Services</a></li>
-				</ul>
-			</div>
-			<div class="w3ls_logo_products_left1">
-				<ul class="phone_email">
-					<li><i class="fa fa-phone" aria-hidden="true"></i>(+91) 1231 234 567</li>
-					<li><i class="fa fa-envelope-o" aria-hidden="true"></i><a href="quicky@gmail.com">quicky.com</a></li>
-				</ul>
-			</div>
-			<div class="clearfix"> </div>
-		</div>
-	</div>
-<!-- //header -->
-<!-- products-breadcrumb -->
-	<div class="products-breadcrumb">
-		<div class="container">
-			<ul>
-				<li><i class="fa fa-home" aria-hidden="true"></i><a href="index.html">Home</a><span>|</span></li>
-				<li>Sign In & Sign Up</li>
-			</ul>
-		</div>
-	</div>
-
-   <div class="w3_login">
-               <form id="form1" runat="server">
-
+    <form id="form1" runat="server">
+    <div class="w3_login">
 			<h3>Sign In & Sign Up</h3>
 			<div class="w3_login_module">
 				<div class="module form-module">
-				  <div class="toggle"><i class="fa fa-times fa-pencil"></i>
-					<div class="tooltip"><a href="FoodieDefault.aspx">Home</a></div>
+			  <div class="toggle"><i class="fa fa-times fa-pencil"></i>
+                  	<div class="tooltip"><a href="FoodieDefault.aspx">Home</a></div>
+
+				</div>
+				 <div class="form">
+					<h2><center>Create  your account</center></h2>
+                        <asp:TextBox ID="txtname" runat="server" placeholder="FullName"></asp:TextBox>
+                       <%-- <asp:TextBox ID="txtsname" runat="server" placeholder="ShopName"></asp:TextBox>
+                        <asp:TextBox ID="txtcity" runat="server" placeholder="City"></asp:TextBox>
+                       --%> <asp:TextBox ID="txtemail" runat="server" placeholder="email/Quicky username" TextMode="Email"></asp:TextBox>
+                        <asp:TextBox ID="txtpass" runat="server" placeholder="Password" TextMode="Password"></asp:TextBox>
+                        <asp:TextBox ID="txtcpass" runat="server" placeholder="Retype Password" TextMode="Password"></asp:TextBox>
+                        <asp:Button ID="Button1" runat="server" Text="SignUp" OnClick="Button1_Click" />			
+
+
+<%--                        <asp:Button ID="Button1" runat="server" Text="Register" OnClick="Button1_Click" />			--%>
+<%--                        <asp:Button ID="Button2" runat="server" Text="Home" OnClick="Button1_Click" />			--%>
+
 				  </div>
-				<
-				  <div class="form">
+				  <%--<div class="form">
 					<h2>Create an account</h2>
-                      <asp:TextBox ID="txtname" runat="server"  placeholder="Full Name" required=" "></asp:TextBox>
-                      <asp:TextBox ID="txtemail" runat="server"  placeholder="Username" required=" "></asp:TextBox>
-                      <asp:TextBox ID="txtpass" runat="server"  placeholder="Password" required=" "></asp:TextBox>
-                      <asp:TextBox ID="txtcpass" runat="server"  placeholder="Retype Password" required=" "></asp:TextBox>
-                      <asp:Button ID="Button1" runat="server" Text="Register" />
-				  </div>
-				  <div class="cta"><a href="#">Forgot your password?</a></div>
+					<form action="#" method="post">
+					  <input type="text" name="Username" placeholder="Username" required=" ">
+					  <input type="password" name="Password" placeholder="Password" required=" ">
+					  <input type="email" name="Email" placeholder="Email Address" required=" ">
+					  <input type="text" name="Phone" placeholder="Phone Number" required=" ">
+					  <input type="submit" value="Register">
+					</form>
+				  </div>--%>
+<%--				  <div class="cta"><a href="#">Login</a></div>--%>
 				</div>
 			</div>
-       					  </form>
-
 			<script>
 			    $('.toggle').click(function () {
 			        // Switches the Icon
@@ -164,5 +90,64 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			    });
 			</script>
 		</div>
+
+        <script src="js/bootstrap.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $(".dropdown").hover(
+            function () {
+                $('.dropdown-menu', this).stop(true, true).slideDown("fast");
+                $(this).toggleClass('open');
+            },
+            function () {
+                $('.dropdown-menu', this).stop(true, true).slideUp("fast");
+                $(this).toggleClass('open');
+            }
+        );
+    });
+</script>
+<!-- here stars scrolling icon -->
+	<script type="text/javascript">
+	    $(document).ready(function () {
+	        /*
+				var defaults = {
+				containerID: 'toTop', // fading element id
+				containerHoverID: 'toTopHover', // fading element hover id
+				scrollSpeed: 1200,
+				easingType: 'linear' 
+				};
+			*/
+
+	        $().UItoTop({ easingType: 'easeOutQuart' });
+
+	    });
+	</script>
+<!-- //here ends scrolling icon -->
+<script src="js/minicart.js"></script>
+<script>
+    paypal.minicart.render();
+
+    paypal.minicart.cart.on('checkout', function (evt) {
+        var items = this.items(),
+            len = items.length,
+            total = 0,
+            i;
+
+        // Count the number of each item in the cart
+        for (i = 0; i < len; i++) {
+            total += items[i].get('quantity');
+        }
+
+        if (total < 3) {
+            alert('The minimum order quantity is 3. Please add more to your shopping cart before checking out');
+            evt.preventDefault();
+        }
+    });
+
+	</script>
+
+    </form>
 </body>
 </html>
+
+	
