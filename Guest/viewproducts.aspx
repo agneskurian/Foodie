@@ -24,7 +24,8 @@
 						<li> <asp:Label ID="priceLabel" runat="server" Text='<%# Eval("price") %>' /></li>
 					</ul>
                     <br />
-					<a href="purchase.aspx?id=<%# Eval("shopid") %>&amp;catid=<%# Eval("categoryid") %> &amp;fid=<%# Eval("foodid") %>'">Addtocart</a>
+					
+                     <a href='purchase.aspx?id=<%# Eval("shopid") %>&amp;catid=<%# Eval("categoryid") %>&amp;fid=<%# Eval("foodid") %> '>Add tocart</a>
 				</div>
 				<div class="clearfix"> </div>
 			</div>

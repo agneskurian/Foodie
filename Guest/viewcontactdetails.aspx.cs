@@ -9,6 +9,11 @@ public partial class Guest_viewcontactdetails : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-
+        //if (Session["email"].ToString() == "")
+        //{
+        //    Response.Redirect("~/Guest/FoodieDefault.aspx");
+        //}
+   
+   
     }
 }

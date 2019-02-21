@@ -8,7 +8,7 @@ using System.Web.UI.WebControls;
 using System.Data.SqlClient;
 using System.Data;
 using System.Configuration;
-using System.String;
+//using System.String;
 
 
 
@@ -17,10 +17,10 @@ public partial class Guest_viewproducts : System.Web.UI.Page
     protected void Page_Load(object sender, EventArgs e)
     {
 
-        //if (Session["email"].ToString() == "")
-        //{
-        //    Response.Redirect("~/Guest/FoodieDefault.aspx");
-        //}
+        if (Session["email"] == null)
+        {
+            Response.Redirect("~/Guest/adminlogin.aspx");
+        }
    
     }
     
@@ -54,8 +54,18 @@ public partial class Guest_viewproducts : System.Web.UI.Page
     protected void Button1_Click(object sender, EventArgs e)
     {
 
-    //    obj.getconnect();
-    //    SqlCommand cmd = new SqlCommand("spcart", obj.con);
+
+        Class1 obj = new Class1();
+        obj.getconnect();
+        SqlCommand cmd = new SqlCommand("spViewSingleProduct", obj.con);
+        cmd.CommandType = CommandType.StoredProcedure;
+        cmd.Parameters.Add("@flag", 1);
+        //cmd.Parameters.Add("@cartid", get_ids());
+        cmd.Parameters.Add("@shopid", Request.QueryString["id"].ToString());
+        cmd.Parameters.Add("@categoryid", Request.QueryString["catid"].ToString());
+        cmd.Parameters.Add("@foodid", Request.QueryString["fid"].ToString());
+        cmd.ExecuteNonQuery();
+        //    SqlCommand cmd = new SqlCommand("spcart", obj.con);
     //    cmd.CommandType = CommandType.StoredProcedure;
     //    cmd.Parameters.Add("@flag", 0);
     //    cmd.Parameters.Add("@cartid", get_ids());
@@ -64,7 +74,7 @@ public partial class Guest_viewproducts : System.Web.UI.Page
     //    cmd.Parameters.Add("@foodid", Request.QueryString["fid"].ToString());
     //    cmd.ExecuteNonQuery();
     //    Response.Redirect("purchase.aspx");
-    //}        
+    }        
     protected void DataList1_SelectedIndexChanged(object sender, EventArgs e)
     {
           
