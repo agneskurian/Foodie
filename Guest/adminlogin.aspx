@@ -42,9 +42,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <div class="w3_login">
 			<h3>Sign In & Sign Up</h3>
 			<div class="w3_login_module">
-				<div class="module form-module">
+				<div class="module form-module"> 
+                    <div class="toggle"><i class="fa fa-times fa-pencil"></i>
+					<div class="tooltip"><a href="FoodieDefault.aspx">Home</a></div>
+				  </div>
+				  
 <%--				  <div class="toggle"><i class="fa fa-times fa-pencil"></i>--%>
-				<div></div>
+				
 				 <div class="form">
 					<h2>Login to your account</h2>
                         <asp:TextBox ID="txtemail" runat="server" placeholder="Username"></asp:TextBox>

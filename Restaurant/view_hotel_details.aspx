@@ -13,13 +13,19 @@
                  <asp:BoundField DataField="shopid" HeaderText="shopid" SortExpression="shopid" />
                  <asp:BoundField DataField="HotelName" HeaderText="HotelName" SortExpression="HotelName" />
                  <asp:BoundField DataField="HotelType" HeaderText="HotelType" SortExpression="HotelType" />
-                 <asp:BoundField DataField="image" HeaderText="image" SortExpression="image" />
                  <asp:BoundField DataField="City" HeaderText="City" SortExpression="City" />
                  <asp:BoundField DataField="Location" HeaderText="Location" SortExpression="Location" />
                  <asp:BoundField DataField="Deliverytime" HeaderText="Deliverytime" SortExpression="Deliverytime" />
                  <asp:BoundField DataField="Facility" HeaderText="Facility" SortExpression="Facility" />
                  <asp:BoundField DataField="Description" HeaderText="Description" SortExpression="Description" />
                  <asp:BoundField DataField="Date" HeaderText="Date" SortExpression="Date" />
+                 <asp:TemplateField>
+                  <ItemTemplate>
+                  <asp:Image ID="Image1" runat="server" Height="100px" ImageUrl='<%# Eval("image") %>' />
+                </ItemTemplate>
+              </asp:TemplateField>
+
+   
              </Columns>
                         <EditRowStyle BackColor="#999999" />
              <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />

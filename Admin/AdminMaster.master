@@ -52,7 +52,7 @@
           <!-- settings start -->
           <li class="dropdown">
             <a data-toggle="dropdown" class="dropdown-toggle" href="index.html#">
-              <i class="fa fa-tasks"></i>
+              <%--<i class="fa fa-tasks"></i>
               <span class="badge bg-theme">4</span>
               </a>
             <ul class="dropdown-menu extended tasks-bar">
@@ -117,9 +117,9 @@
               </li>
             </ul>
           </li>
-          <!-- settings end -->
+          --%><!-- settings end -->
           <!-- inbox dropdown start-->
-          <li id="header_inbox_bar" class="dropdown">
+          <%--<li id="header_inbox_bar" class="dropdown">
             <a data-toggle="dropdown" class="dropdown-toggle" href="index.html#">
               <i class="fa fa-envelope-o"></i>
               <span class="badge bg-theme">5</span>
@@ -228,7 +228,7 @@
             </ul>
           </li>
           <!-- notification dropdown end -->
-        </ul>
+        </ul>--%>
         <!--  notification end -->
       </div>
       <div class="top-menu">
@@ -249,7 +249,7 @@
         <!-- sidebar menu start-->
         <ul class="sidebar-menu" id="nav-accordion">
           <p class="centered"><a href="profile.html"><img src="img/ui-sam.jpg" class="img-circle" width="80"></a></p>
-          <h5 class="centered">Sam Soffes</h5>
+          <h5 class="centered">Barun Sopthi</h5>
           <li class="mt">
             <a class="active" href="index.html">
               <i class="fa fa-dashboard"></i>
@@ -259,19 +259,20 @@
           <li class="sub-menu">
             <a href="javascript:;">
               <i class="fa fa-desktop"></i>
-              <span>Send</span>
+              <span>View</span>
               </a>
             <ul class="sub">
               <li><a href="sendnotification.aspx">ShopApprove</a></li>
               <li><a href="view_all_hotels.aspx">All Hotels</a></li>
-              <li><a href="Default.aspx">Food</a></li>
+              <li><a href="Default.aspx">Hotel</a></li>
+             <li><a href="viewfooditems.aspx">Food</a></li>
               <li><a href="font_awesome.html">Offer</a></li>
             </ul>
           </li>
           <li class="sub-menu">
             <a href="javascript:;">
               <i class="fa fa-cogs"></i>
-              <span>View</span>
+              <span>Add</span>
               </a>
             <ul class="sub">
               <li><a href="admin_hotel_view.aspx">Shop</a></li>
@@ -286,7 +287,7 @@
           <li class="sub-menu">
             <a href="javascript:;">
               <i class="fa fa-book"></i>
-              <span>Extra Pages</span>
+              <span>Notifications</span>
               </a>
             <ul class="sub">
               <li><a href="blank.html">Blank Page</a></li>
@@ -300,7 +301,7 @@
               <li><a href="500.html">500 Error</a></li>
             </ul>
           </li>
-          <li class="sub-menu">
+          <%--<li class="sub-menu">
             <a href="javascript:;">
               <i class="fa fa-tasks"></i>
               <span>Forms</span>
@@ -357,7 +358,7 @@
               <i class="fa fa-map-marker"></i>
               <span>Google Maps </span>
               </a>
-          </li>
+          </li>--%>
         </ul>
         <!-- sidebar menu end-->
       </div>

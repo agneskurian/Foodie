@@ -53,7 +53,7 @@
         <!--  notification start -->
         <ul class="nav top-menu">
           <!-- settings start -->
-          <li class="dropdown">
+         <%-- <li class="dropdown">
             <a data-toggle="dropdown" class="dropdown-toggle" href="index.html#">
               <i class="fa fa-tasks"></i>
               <span class="badge bg-theme">4</span>
@@ -233,14 +233,14 @@
           <!-- notification dropdown end -->
         </ul>
         <!--  notification end -->
-      </div>
+      </div>--%>
       <%--<div class="top-menu">--%>
         <ul class="nav pull-right top-menu">
 <%--            <asp:Button ID="Button1" runat="server"  class="btn btn-theme" Text="Logout"  />--%>
           <li><a  href="../logout.aspx" class="logout">Logout</a></li>
-       <%-- </ul>
+        </ul>
       </div>
-    --%></header>
+    </header>
     <!--header end-->
     <!-- **********************************************************************************************************************************************************
         MAIN SIDEBAR MENU
@@ -250,9 +250,9 @@
       <div id="sidebar" class="nav-collapse ">
         <!-- sidebar menu start-->
         <ul class="sidebar-menu" id="nav-accordion">
-          <p> class="centered"><a href="mlml"><img src="img/" class="img-circle" width="80"/></a></p>
+          <%--<p> class="centered"><a href="mlml"><img src="img/" class="img-circle" width="80"/></a></p>
           <h5> class="centered">Sam Soffes</h5>
-          <li class="mt">
+          --%><li class="mt">
             <a class="active" href="RestaurantDefault.aspx">
               <i class="fa fa-dashboard"></i>
               <span>Home</span>
@@ -284,17 +284,17 @@
             <ul class="sub">
               <li><a href="viewemployee.aspx">Employee</a></li>
               <li><a href="view_hotel_details.aspx">Shop Profile</a></li>
-              <li><a href="viewfood.aspx">Food</a></li>
+              <li><a href="Default2.aspx">Food</a></li>
               <li><a href="viewstatus.aspx">Status</a></li>
               <li><a href="viewhotelref.aspx">HotelReference</a></li>
               <li><a href="viewmenu.aspx">Menu</a></li>
-              <li><a href="file_upload.html">Multiple File Upload</a></li>
+              <li><a href="viewcategory.aspx">Category</a></li>
             </ul>
           </li>
           <li class="sub-menu">
             <a href="javascript:;">
               <i class="fa fa-book"></i>
-              <span>Extra Pages</span>
+              <span>Logout</span>
               </a>
             <ul class="sub">
               <li><a href="blank.html">Blank Page</a></li>
@@ -308,7 +308,7 @@
               <li><a href="500.html">500 Error</a></li>
             </ul>
           </li>
-          <li class="sub-menu">
+          <%--<li class="sub-menu">
             <a href="javascript:;">
               <i class="fa fa-tasks"></i>
               <span>Forms</span>
@@ -365,7 +365,7 @@
               <i class="fa fa-map-marker"></i>
               <span>Google Maps </span>
               </a>
-          </li>
+          </li>--%>
         </ul>
         <!-- sidebar menu end-->
       </div>

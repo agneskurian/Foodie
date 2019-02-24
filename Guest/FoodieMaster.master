@@ -71,6 +71,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<li><a href="about.html" style="color: #FFFFFF">About Us</a><i>/</i></li>
 					<li><a href="products.html" style="color: #FFFFFF">Services</a><i>/</i></li>
 					<li><a href="services.html" style="color: #FFFFFF">Contact Us</a><i>/</i></li>
+                    <li><a href="mycart.aspx" style="color: #FFFFFF">MyCart</a><i>/</i></li>
+
 <%--                    <li><a href="logout.aspx" style="color: #FFFFFF">Logout</a></li>--%>
 				</ul>
 			</div>
@@ -82,9 +84,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<div class="mega-dropdown-menu">
 						<div class="w3ls_vegetables">
 							<ul class="dropdown-menu drp-mnu">
-								<li><a href="adminlogin.aspx">AdminLogin</a></li> 
+								<li><a href="adminlogin.aspx">Login</a></li> 
                                 <li><a href="shoplogin.aspx">Shop Login</a></li>
-								<li><a href="userlogin.aspx">User Login</a></li>
 							</ul>
 						</div>                  
 					</div>	
@@ -126,7 +127,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                            
 				
-                                   <asp:Label ID="Label1" runat="server" Text="  Select Neede City  "></asp:Label> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="SqlDataSource1" DataTextField="City" DataValueField="City" Width="450px" Height="39px"></asp:DropDownList>  <asp:Button ID="Button1" runat="server" Text="Submit" UseSubmitBehavior="true" class="button" OnClick="Button1_Click" AutoPostBack ="true" BackColor="#66FF66" />
+                                   <asp:Label ID="Label1" runat="server" Text="  Select Needed City  "></asp:Label> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="SqlDataSource1" DataTextField="City" DataValueField="City" Width="450px" Height="39px"></asp:DropDownList>  <asp:Button ID="Button1" runat="server" Text="Submit" UseSubmitBehavior="true" class="button" OnClick="Button1_Click" AutoPostBack ="true" BackColor="#66FF66" />
                                     <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:QuickyConnectionString %>"  SelectCommand="SELECT DISTINCT [City] FROM [tbl_add_hotel_details]"></asp:SqlDataSource>
                                     <br />
                                     <asp:DataList ID="DataList1" runat="server" DataKeyField="shopid" RepeatColumns="4" DataSourceID="SqlDataSource2"  Visible="False">
@@ -236,23 +237,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                                           </div>
 							</div>
 						
-						<%--<li>
-							<div class="w3l_banner_nav_right_banner1">
-								<h3>Make your <span>food</span> with Spicy.</h3>
-								<div class="more">
-									<a href="products.html" class="button--saqui button--round-l button--text-thick" data-text="Shop now">Shop now</a>
-								</div>
-							</div>
-						</li>
-						<li>
-							<div class="w3l_banner_nav_right_banner2">
-								<h3>upto <i>50%</i> off.</h3>
-								<div class="more">
-									<a href="products.html" class="button--saqui button--round-l button--text-thick" data-text="Shop now">Shop now</a>
-								</div>
-							</div>
-						</li>
-					</ul>--%>
+						
 				</div>
 			</section>
 			<!-- flexSlider -->
@@ -283,69 +268,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!-- footer -->
 	<div class="footer">
 		<div class="container">
-			<div class="col-md-3 w3_footer_grid">
-				<h3>information</h3>
-				<ul class="w3_footer_grid_list">
-					<li><a href="events.html">Events</a></li>
-					<li><a href="about.html">About Us</a></li>
-					<li><a href="products.html">Best Deals</a></li>
-					<li><a href="services.html">Services</a></li>
-					<li><a href="short-codes.html">Short Codes</a></li>
-				</ul>
-			</div>
-			<div class="col-md-3 w3_footer_grid">
-				<h3>policy info</h3>
-				<ul class="w3_footer_grid_list">
-					<li><a href="faqs.html">FAQ</a></li>
-					<li><a href="privacy.html">privacy policy</a></li>
-					<li><a href="privacy.html">terms of use</a></li>
-				</ul>
-			</div>
-			<div class="col-md-3 w3_footer_grid">
-				<h3>what in stores</h3>
-				<ul class="w3_footer_grid_list">
-					<li><a href="pet.html">Pet Food</a></li>
-					<li><a href="frozen.html">Frozen Snacks</a></li>
-					<li><a href="kitchen.html">Kitchen</a></li>
-					<li><a href="products.html">Branded Foods</a></li>
-					<li><a href="household.html">Households</a></li>
-				</ul>
-			</div>
-			<div class="col-md-3 w3_footer_grid">
-				<h3>twitter posts</h3>
-				<ul class="w3_footer_grid_list1">
-					<li><label class="fa fa-twitter" aria-hidden="true"></label><i>01 day ago</i><span>Non numquam <a href="#">http://sd.ds/13jklf#</a>
-						eius modi tempora incidunt ut labore et
-						<a href="#">http://sd.ds/1389kjklf#</a>quo nulla.</span></li>
-					<li><label class="fa fa-twitter" aria-hidden="true"></label><i>02 day ago</i><span>Con numquam <a href="#">http://fd.uf/56hfg#</a>
-						eius modi tempora incidunt ut labore et
-						<a href="#">http://fd.uf/56hfg#</a>quo nulla.</span></li>
-				</ul>
-			</div>
-			<div class="clearfix"> </div>
-			<div class="agile_footer_grids">
-				<div class="col-md-3 w3_footer_grid agile_footer_grids_w3_footer">
-					<div class="w3_footer_grid_bottom">
-						<h4>100% secure payments</h4>
-						<img src="images/card.png" alt=" " class="img-responsive" />
-					</div>
-				</div>
-				<div class="col-md-3 w3_footer_grid agile_footer_grids_w3_footer">
-					<div class="w3_footer_grid_bottom">
-						<h5>connect with us</h5>
-						<ul class="agileits_social_icons">
-							<li><a href="#" class="facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-							<li><a href="#" class="twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-							<li><a href="#" class="google"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
-							<li><a href="#" class="instagram"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-							<li><a href="#" class="dribbble"><i class="fa fa-dribbble" aria-hidden="true"></i></a></li>
-						</ul>
-					</div>
-				</div>
-				<div class="clearfix"> </div>
-			</div>
 			<div class="wthree_footer_copy">
-				<p>© 2016 Grocery Store. All rights reserved | Design by <a href="http://w3layouts.com/">W3layouts</a></p>
+				<p>Quicky online food delivery</p>
 			</div>
 		</div>
 	</div>

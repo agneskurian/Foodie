@@ -9,6 +9,10 @@ public partial class Restaurant_viewmenu : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
+        if (Session["shopid"].ToString() == "")
+        {
+            Response.Redirect("~/Guest/FoodieDefault.aspx");
+        }
 
     }
 }

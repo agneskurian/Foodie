@@ -4,10 +4,10 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
      <div class="col-lg-8 col-lg-offset-2 detailed mt">
-                        <h4 class="mb">View Employee Details</h4>
+                        <h4 class="mb">View Hote Details</h4>
    
 
-    <asp:Label ID="Label1" runat="server" Text="Search with city"></asp:Label><asp:DropDownList ID="DropDownList1" runat="server" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged" DataSourceID="SqlDataSource1" DataTextField="City" DataValueField="City"></asp:DropDownList><asp:ImageButton ID="ImageButton1" runat="server" />
+    <asp:Label ID="Label1" runat="server" Text="Search with city"></asp:Label><asp:DropDownList ID="DropDownList1" runat="server" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged" DataSourceID="SqlDataSource1" DataTextField="City" DataValueField="City"></asp:DropDownList><asp:ImageButton ID="ImageButton1" runat="server" Height="20" ImageUrl="img/portfolio/search.png" />
                         <br />
                         <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:QuickyConnectionString %>" SelectCommand="SELECT DISTINCT [City] FROM [tbl_add_hotel_details]"></asp:SqlDataSource>
                         <br />
@@ -16,7 +16,7 @@
                                 HotelName:
                                 <asp:Label ID="HotelNameLabel" runat="server" Text='<%# Eval("HotelName") %>' />
                                 <br />
-                                                  <asp:Image ID="Image1" runat="server" Height="100px" ImageUrl='<%# Eval("image") %>' />
+                                <asp:Image ID="Image1" runat="server" Height="100px" ImageUrl='<%# Eval("image") %>' />
 
 <%--                                <asp:Label ID="imageLabel" runat="server" Text='<%# Eval("image") %>' />--%>
                                 <br />

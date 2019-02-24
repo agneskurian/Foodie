@@ -12,7 +12,7 @@
                       <asp:BoundField DataField="foodid" HeaderText="foodid" InsertVisible="False" ReadOnly="True" SortExpression="foodid" />
                       <asp:BoundField DataField="shopid" HeaderText="shopid" SortExpression="shopid" />
                       <asp:BoundField DataField="foodname" HeaderText="foodname" SortExpression="foodname" />
-                      <asp:BoundField DataField="category" HeaderText="category" SortExpression="category" />
+<%--                      <asp:BoundField DataField="category" HeaderText="category" SortExpression="category" />--%>
                       <asp:BoundField DataField="description" HeaderText="description" SortExpression="description" />
                       <asp:BoundField DataField="price" HeaderText="price" SortExpression="price" />
                       <asp:BoundField DataField="image" HeaderText="image" SortExpression="image" />
@@ -35,7 +35,7 @@
                   <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
                         </asp:GridView>
 
-                        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:QuickyConnectionString %>" DeleteCommand="DELETE FROM [tbl_add_fooditems] WHERE [foodid] = @foodid" InsertCommand="INSERT INTO [tbl_add_fooditems] ([shopid], [foodname], [category], [image], [description], [price]) VALUES (@shopid, @foodname, @category, @image, @description, @price)" SelectCommand="SELECT [shopid], [foodname], [category], [image], [description], [price], [foodid] FROM [tbl_add_fooditems] WHERE ([shopid] = @shopid)" UpdateCommand="UPDATE [tbl_add_fooditems] SET [shopid] = @shopid, [foodname] = @foodname, [category] = @category, [image] = @image, [description] = @description, [price] = @price WHERE [foodid] = @foodid">
+                        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:QuickyConnectionString %>" DeleteCommand="DELETE FROM [tbl_add_fooditems] WHERE [foodid] = @foodid" InsertCommand="INSERT INTO [tbl_add_fooditems] ([shopid], [foodname],[image], [description], [price]) VALUES (@shopid, @foodname, @image, @description, @price)" SelectCommand="SELECT [shopid], [foodname], [category], [image], [description], [price], [foodid] FROM [tbl_add_fooditems] WHERE ([shopid] = @shopid)" UpdateCommand="UPDATE [tbl_add_fooditems] SET [shopid] = @shopid, [foodname] = @foodname, [category] = @category, [image] = @image, [description] = @description, [price] = @price WHERE [foodid] = @foodid ">
                             <DeleteParameters>
                                 <asp:Parameter Name="foodid" Type="Int32" />
                             </DeleteParameters>

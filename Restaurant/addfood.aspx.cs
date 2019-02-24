@@ -22,7 +22,7 @@ public partial class Restaurant_addfood : System.Web.UI.Page
     }
     protected int get_id()
     {
-        int id = 99;
+        int id = 106;
         int a = 0;
         Class1 obj = new Class1();
         obj.getconnect();

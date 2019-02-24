@@ -5,15 +5,10 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-public partial class Admin_Default : System.Web.UI.Page
+public partial class Restaurant_viewcategory : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
 
     }
-    protected void DropDownList1_SelectedIndexChanged(object sender, EventArgs e)
-    {
-        DataList1.Visible = true;
-
-    }
-   }
+}

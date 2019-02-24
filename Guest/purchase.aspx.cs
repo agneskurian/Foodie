@@ -14,14 +14,13 @@ public partial class Guest_purchase : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        //if (Session["email"].ToString() == "")
-        //{
-        //    Response.Redirect("~/Guest/FoodieDefault.aspx");
-        //}
-        //if (!IsPostBack)
+        if (Session["email"] == null)
+        {
+            Response.Redirect("~/Guest/adminlogin.aspx");
+        }
+        if (!IsPostBack)
         {
             //cmd.Parameters.Add("@cartid", get_ids());
-
 
             Class1 obj = new Class1();
             obj.getconnect();
@@ -48,7 +47,7 @@ public partial class Guest_purchase : System.Web.UI.Page
     protected int get_ids()
     {
         {
-            int id = 99;
+            int id = 0;
             int a = 0;
             Class1 obj = new Class1();
             obj.getconnect();
@@ -97,10 +96,12 @@ public partial class Guest_purchase : System.Web.UI.Page
         cmd.Parameters.Add("@shopid", Request.QueryString["id"].ToString());
         cmd.Parameters.Add("@categoryid", Convert.ToInt32(Request.QueryString["catid"].ToString()));
         cmd.Parameters.Add("@foodid",Convert.ToInt32( Request.QueryString["fid"].ToString()));
+        cmd.Parameters.Add("@email", Session["email"].ToString());
         cmd.Parameters.Add("@quantity",Convert.ToInt32(( txtquan.Text)));
         cmd.Parameters.Add("@totalcost", Label2.Text);
+        cmd.Parameters.Add("@status", "Not Approved");
         cmd.ExecuteNonQuery();
-        Response.Write("Added successfully");
+        Response.Write("<script>alert('Added to cart Successfully you can check in your cart')</script>");
         //
     }
     protected void txtquan_TextChanged(object sender, EventArgs e)

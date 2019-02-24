@@ -5,29 +5,40 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
 
 
+    <div class="top-brands">
 
-    <asp:DataList ID="DataList1" runat="server"  >
+            		<div class="container">
+
+            			<div class="agile_top_brands_grids">
+
+						<div class="agile_top_brand_center_grid">
+                
+    <asp:DataList ID="DataList1" runat="server" ForeColor="#990000">
         <ItemTemplate>
-            foodname:
-            <asp:Label ID="foodnameLabel" runat="server" Text='<%# Eval("foodname") %>' />
+           <asp:Image ID="Image1" runat="server" Height="320px" Width="280px" ImageUrl='<%# Eval("image") %>' />
             <br />
-            image:
-           <asp:Image ID="Image1" runat="server" Height="210px" Width="150px" ImageUrl='<%# Eval("image") %>' />
+
+            <h3><asp:Label ID="foodnameLabel" runat="server" style="color: #990033"  Text='<%# Eval("foodname") %>' Font-Bold="True" /></h3>
             <br />
-            price:
-            <asp:Label ID="priceLabel" runat="server" Text='<%# Eval("price") %>' />
+            <h4>Price:
+            <asp:Label ID="priceLabel" runat="server" Text='<%# Eval("price") %>' /></h4>
             <br />
             <br />
         </ItemTemplate>
     </asp:DataList>
-    <asp:Label ID="Label1" runat="server" Text="Quantity"></asp:Label>
+    
+    <asp:Label ID="Label1" runat="server" Text="Quantity" style="color: #990033" ></asp:Label>
     <asp:TextBox ID="txtquan" runat="server" AutoPostBack="True" OnTextChanged="txtquan_TextChanged"></asp:TextBox>
     <br />
-    <asp:Label ID="Label2" runat="server" Text="Totalcost"></asp:Label>
+    <br />
+    <asp:Label ID="Label2" runat="server" style="color: #990033" Text="Totalcost"></asp:Label>
 
-    <asp:Button ID="Button1" runat="server" Text="Totalcost" OnClick="Button1_Click1" />
+    <asp:Button ID="Button1" runat="server" Text="Addtocart" style="color: #990033" OnClick="Button1_Click1" />
+    <br />
     <br />
 
-
+</div>
+            </div>
+                            </div>                </div>
     </asp:Content>
 

@@ -48,7 +48,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 				</div>
 				 <div class="form">
-					<h2>Login to your account</h2>
+					<h2>Register Here</h2>
                         <asp:TextBox ID="txtshopid" runat="server" placeholder="ShopId"></asp:TextBox>
                        <%-- <asp:TextBox ID="txtsname" runat="server" placeholder="ShopName"></asp:TextBox>
                         <asp:TextBox ID="txtcity" runat="server" placeholder="City"></asp:TextBox>
