@@ -50,12 +50,20 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				</div>
 				 <div class="form">
 					<h2><center>Create  your account</center></h2>
-                        <asp:TextBox ID="txtname" runat="server" placeholder="FullName"></asp:TextBox>
-                       <%-- <asp:TextBox ID="txtsname" runat="server" placeholder="ShopName"></asp:TextBox>
-                        <asp:TextBox ID="txtcity" runat="server" placeholder="City"></asp:TextBox>
-                       --%> <asp:TextBox ID="txtemail" runat="server" placeholder="email/Quicky username" TextMode="Email"></asp:TextBox>
+                        <asp:TextBox ID="txtname" runat="server" placeholder="FullName" TextMode="SingleLine" ></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="*" ForeColor="Red" ControlToValidate="txtNAME" ></asp:RequiredFieldValidator>
+                        <asp:TextBox ID="txtphn" runat="server" placeholder="PhoneNumber"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ErrorMessage="*" ForeColor="Red" ControlToValidate="txtphn"></asp:RequiredFieldValidator>
+                        <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ControlToValidate="txtphn" ErrorMessage="Enter a valid phone number
+                        " ForeColor="Red" ValidationExpression="\d{10}"></asp:RegularExpressionValidator>
+                
+                        <asp:TextBox ID="txtemail" runat="server" placeholder="email/Quicky username" TextMode="Email" ></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="*" ForeColor="Red" ControlToValidate="txtemail" ></asp:RequiredFieldValidator>
                         <asp:TextBox ID="txtpass" runat="server" placeholder="Password" TextMode="Password"></asp:TextBox>
+                     
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="*" ForeColor="Red" ControlToValidate="txtpass" ></asp:RequiredFieldValidator>
                         <asp:TextBox ID="txtcpass" runat="server" placeholder="Retype Password" TextMode="Password"></asp:TextBox>
+                    <asp:CompareValidator ID="CompareValidator1" runat="server" ControlToCompare="txtpass" ControlToValidate="txtcpass" ErrorMessage="Password mismatch" ForeColor="Red"></asp:CompareValidator>
                         <asp:Button ID="Button1" runat="server" Text="SignUp" OnClick="Button1_Click" />			
 
 

@@ -18,7 +18,7 @@
                       <asp:BoundField DataField="image" HeaderText="image" SortExpression="image" />
                       <asp:TemplateField>
                           <ItemTemplate>
-                  <asp:Image ID="Image1" runat="server" Height="100px" ImageUrl='<%# Eval("image") %>' />
+                  <asp:Image ID="Image1" runat="server" Height="150px" ImageUrl='<%# Eval("image") %>' />
                 </ItemTemplate>
    
                       </asp:TemplateField>

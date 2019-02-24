@@ -3,9 +3,15 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
-    <div class="col-lg-8 col-lg-offset-2 detailed mt">
-                        <h4 class="mb">Add Hotel Details</h4>
-     <table class="nav-justified">
+    <section id="main-content">
+      <section class="wrapper">
+        <h3><i class="fa fa-angle-right"></i> Add Food Category</h3>
+        <div class="row mt">
+          <!--  DATE PICKERS -->
+          <div class="col-lg-14">
+            <div class="form-panel">
+                <table class="nav-justified">
+
 
             <tr>
              <td><div class="form-group"><label class="col-lg-2 control-label">Hotel name</label>&nbsp;</div>
@@ -70,6 +76,20 @@
                  <br />
                  </div></td>
          </tr>
+                    <tr>
+             <td><div class="form-group"><label class="col-lg-2 control-label">Phone</label>&nbsp;</div>
+
+             </td>
+             <td><div class="col-lg-6">
+             &nbsp;<asp:TextBox ID="txtphn" runat="server"  class="form-control" placeholder=""></asp:TextBox>
+                 <asp:RequiredFieldValidator ID="RequiredFieldValidator8" runat="server" ErrorMessage="*" ControlToValidate="txtphn" ></asp:RequiredFieldValidator>
+                                     <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ControlToValidate="txtphn" ErrorMessage="Enter a valid phone number
+                        " ForeColor="Red" ValidationExpression="\d{10}"></asp:RegularExpressionValidator>
+
+                 <br />
+                 </div></td>
+         </tr>
+         
           <tr>
              <td><div class="form-group"><label class="col-lg-2 control-label">DeliveryTime</label>&nbsp;</div>
              </td>
@@ -86,8 +106,8 @@
              <td><div class="col-lg-6">
                  <asp:DropDownList ID="DropDownList2" runat="server" Class="form-control">
                      <asp:ListItem>Select</asp:ListItem>
-                     <asp:ListItem>Online Delivery&Details</asp:ListItem>
-                     <asp:ListItem>Add Details</asp:ListItem>
+                     <asp:ListItem>Online Delivery</asp:ListItem>
+                     <asp:ListItem>No online delivery</asp:ListItem>
 
                  </asp:DropDownList>
                  <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="*" ControlToValidate="DropDownList2" ForeColor="Red"></asp:RequiredFieldValidator>
@@ -110,14 +130,20 @@
                  <br />
                  </div>&nbsp;</td>
          </tr>
-     </table>
+                                   </table>
+
                           <div class="form-group">
                             <div class="col-lg-offset-2 col-lg-10">
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                 <asp:Button ID="Button1" class="btn btn-theme" runat="server" Text="Save" OnClick="Button1_Click" />
-                               <asp:Button ID="Button2" class="btn btn-theme" runat="server" Text="Cancel" />
+                               <asp:Button ID="Button2" class="btn btn-theme04" runat="server" Text="Cancel" OnClick="Button2_Click" />
                             </div>
                           </div>
           </div>
+              </div></div>
+
+          </section>
+        </section>
     
 </asp:Content>
 

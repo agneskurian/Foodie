@@ -9,16 +9,22 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
 
-     <div class="col-lg-8 col-lg-offset-2 detailed mt">
-                        <h4 class="mb">Add Food Items</h4>
-                    
-     <table class="nav-justified">
-             <tr>
+     <section id="main-content">
+      <section class="wrapper">
+        <h3><i class="fa fa-angle-right"></i> Add Food Category</h3>
+        <div class="row mt">
+          <!--  DATE PICKERS -->
+          <div class="col-lg-14">
+            <div class="form-panel">
+                <table class="nav-justified">
+
+
+            <tr>
              <td><div class="form-group">
              <label class="col-lg-2 control-label">Food Name</label>&nbsp;</div>
              </td>
              <td><div class="col-lg-6">
-             &nbsp;<asp:TextBox ID="txtfname" runat="server"  class="form-control" placeholder=""></asp:TextBox></div>
+             &nbsp;<asp:TextBox ID="txtfname" runat="server"  class="form-control" placeholder="Foodname"></asp:TextBox></div>
             </td>
 
          </tr>
@@ -50,6 +56,8 @@
 
 <%--             &nbsp;<asp:TextBox ID="txtimg" runat="server"  class="form-control" placeholder=""></asp:TextBox>--%>
                  </div></td>
+                                                                <br />
+
          </tr>
           <tr>
              <td><div class="form-group"><label class="col-lg-2 control-label">Description</label>&nbsp;</div></td>
@@ -57,32 +65,16 @@
                  <br />
                  </div>&nbsp;</td>
          </tr>
-    
 
 
-       <%--  <tr>
-             <td><div class="form-group"><label class="col-lg-2 control-label">Availability</label>&nbsp;</div>
 
-             </td>
-             <td><div class="col-lg-6">
-
-                 <asp:RadioButtonList ID="RadioButtonList1" runat="server" Width="108px">
-                     <asp:ListItem>Available</asp:ListItem>                     <asp:ListItem>NotAvailable</asp:ListItem>
-
-                 </asp:RadioButtonList>
-
-             &nbsp;<asp:TextBox ID="txtavail" runat="server"  class="form-control" placeholder=""></asp:TextBox>
-                 <br />
-                 </div></td>
-         </tr>
-       --%>  <tr>
+       <tr>
              <td><div class="form-group"><label class="col-lg-2 control-label">Price</label>&nbsp;</div>
 
              </td>
              <td><div class="col-lg-6">
              &nbsp;<asp:TextBox ID="txtprice" runat="server"  class="form-control" placeholder=""></asp:TextBox>
                  <br />
-                                               <br />
 
                  </div></td>
 
@@ -91,13 +83,16 @@
          <br />
          <div class="form-group">
                             <div class="col-lg-offset-2 col-lg-10">
-                                <asp:Button ID="Button1" class="btn btn-theme" runat="server" Text="Add" OnClick="Button1_Click" />
+                                <asp:Button ID="Button1" class="btn btn-theme" runat="server" Text="Add Food" OnClick="Button1_Click" />
 <%--                               <asp:Button ID="Button2" class="btn btn-theme" runat="server" Text="Cancel" />--%>
                             </div>
+             <br />
                           </div>
                         
           </div>
         
-
+</div></div>
+          </section>
+         </section>
 </asp:Content>
 

@@ -84,6 +84,7 @@ public partial class Guest_userregister : System.Web.UI.Page
             cmd1.Parameters.Add("@flag", 0);
             cmd1.Parameters.Add("@userregid", get_id());
             cmd1.Parameters.Add("@name", txtname.Text);
+            cmd1.Parameters.Add("@phone", txtphn.Text);
             cmd1.Parameters.Add("@email", txtemail.Text);
             cmd1.Parameters.Add("@password", txtpass.Text);
             cmd1.ExecuteNonQuery();

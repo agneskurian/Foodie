@@ -289,6 +289,8 @@
               <li><a href="viewhotelref.aspx">HotelReference</a></li>
               <li><a href="viewmenu.aspx">Menu</a></li>
               <li><a href="viewcategory.aspx">Category</a></li>
+              <li><a href="viewuserorder.aspx">Order</a></li>
+
             </ul>
           </li>
           <li class="sub-menu">

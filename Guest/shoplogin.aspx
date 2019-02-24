@@ -50,7 +50,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				  <div class="form">
 					  <h2>Login to your account</h2>
                         <asp:TextBox ID="txtshopid" runat="server" placeholder="ShopId"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="*" ForeColor="Red" ControlToValidate="txtshopid"></asp:RequiredFieldValidator>
+
                         <asp:TextBox ID="txtPass" runat="server" placeholder="Password" TextMode="Password"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="*" ForeColor="Red" ControlToValidate="txtPass"></asp:RequiredFieldValidator>
 
                         <asp:Button ID="Button1" runat="server" Text="Login" OnClick="Button1_Click" />			
 				  </div>

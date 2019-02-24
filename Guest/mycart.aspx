@@ -48,15 +48,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     
 
                 
-    <div class="w3ls_logo_products_left1"   style="color: #FFFFFF">
+     <div class="w3ls_logo_products_left1"   style="color: #FFFFFF">
 				<ul class="special_items">
 					<li><a href="FoodieDefault.aspx" style="color: #FFFFFF">Home</a><i>/</i></li>
 					<li><a href="about.html" style="color: #FFFFFF">About Us</a><i>/</i></li>
 					<li><a href="products.html" style="color: #FFFFFF">Services</a><i>/</i></li>
 					<li><a href="services.html" style="color: #FFFFFF">Contact Us</a><i>/</i></li>
-                    <li><a href="services.html" style="color: #FFFFFF">MyCart</a><i>/</i></li>
+                    <li><a href="mycart.aspx" style="color: #FFFFFF">MyCart</a><i>/</i></li>
 
-<%--                    <li><a href="logout.aspx" style="color: #FFFFFF">Logout</a></li>--%>
+   <li><a href="../userlogout.aspx" style="color: #FFFFFF">Logout</a></li>
 				</ul>
 			</div>
 
@@ -102,13 +102,49 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<h3>Chec<span>kout</span></h3>
 			
 	      <div class="checkout-right">
+
 					<h4>Your shopping cart contains: <span>3 Products</span></h4>
 
-
-
-              <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource1">
+              <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="4" DataSourceID="SqlDataSource1" ForeColor="Black" GridLines="Horizontal" Width="608px" OnSelectedIndexChanged="GridView1_SelectedIndexChanged">
                   <Columns>
-                      <asp:BoundField DataField="shopid" HeaderText="shopid" SortExpression="shopid" />
+                      <%--<asp:BoundField DataField="shopid" HeaderText="Shopid" SortExpression="shopid" />--%>
+                      <asp:BoundField DataField="foodid" HeaderText="Foodid" SortExpression="foodid" />
+                      <asp:BoundField DataField="foodname" HeaderText="FoodName" SortExpression="foodname" />
+                      <asp:BoundField DataField="email" HeaderText="Email" SortExpression="email" />
+                      <asp:BoundField DataField="quantity" HeaderText="Quantity" SortExpression="quantity" />
+<%--                      <asp:BoundField DataField="image" HeaderText="Image" SortExpression="status" />--%>
+                      <asp:BoundField DataField="totalcost" HeaderText="Totalcost" SortExpression="totalcost" />
+<%--                      <asp:BoundField DataField="status" HeaderText="Status" SortExpression="status" />--%>
+
+                       <asp:TemplateField>
+                  <ItemTemplate>
+                  <asp:Image ID="Image1" runat="server" Height="120px" ImageUrl='<%# Eval("image") %>' />
+                 </ItemTemplate>
+                 </asp:TemplateField>
+                 <asp:ButtonField CommandName="Select" Text="Order" />
+
+                  </Columns>
+                  <FooterStyle BackColor="#CCCC99" ForeColor="Black" />
+                  <HeaderStyle BackColor="#333333" Font-Bold="True" ForeColor="White" />
+                  <PagerStyle BackColor="White" ForeColor="Black" HorizontalAlign="Right" />
+                  <SelectedRowStyle BackColor="#CC3333" Font-Bold="True" ForeColor="White" />
+                  <SortedAscendingCellStyle BackColor="#F7F7F7" />
+                  <SortedAscendingHeaderStyle BackColor="#4B4B4B" />
+                  <SortedDescendingCellStyle BackColor="#E5E5E5" />
+                  <SortedDescendingHeaderStyle BackColor="#242121" />
+                    </asp:GridView>
+
+                    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:QuickyConnectionString %>" SelectCommand="SELECT  tbl_add_fooditems.foodname, tbl_add_fooditems.image, tbl_order.foodid,tbl_order.quantity, tbl_order.email, tbl_order.totalcost FROM tbl_add_fooditems INNER JOIN tbl_order ON tbl_add_fooditems.foodid = tbl_order.foodid WHERE  (([email] = @email) AND ([status] = @status))">
+                        <SelectParameters>
+                              <asp:SessionParameter Name="email" SessionField="email" Type="String" />
+
+                            <asp:Parameter DefaultValue="Not approved" Name="status" Type="String" />
+                        </SelectParameters>
+                    </asp:SqlDataSource>
+
+
+              <%--<asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource1">
+                  <Columns>
                       <asp:BoundField DataField="foodid" HeaderText="foodid" SortExpression="foodid" />
                       <asp:BoundField DataField="email" HeaderText="email" SortExpression="email" />
                       <asp:BoundField DataField="quantity" HeaderText="quantity" SortExpression="quantity" />
@@ -116,130 +152,21 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                       <asp:BoundField DataField="foodname" HeaderText="foodname" SortExpression="foodname" />
                       <asp:BoundField DataField="image" HeaderText="image" SortExpression="image" />
                   </Columns>
-                    </asp:GridView>
+                    </asp:GridView>--%>
+              <br />
 
+        <asp:Button ID="Button1"   runat="server" Text="Add to Basket" BackColor="#66CCFF" OnClick="Button1_Click" />
 
-
-				    <asp:SqlDataSource ID="SqlDataSource1" runat="server"></asp:SqlDataSource>
-
-
-
-				   <%-- <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:QuickyConnectionString %>" SelectCommand="SELECT tbl_cart.shopid, tbl_cart.foodid, tbl_cart.email, tbl_cart.quantity, tbl_cart.totalcost, tbl_add_fooditems.foodname, tbl_add_fooditems.image FROM tbl_cart CROSS JOIN tbl_add_fooditems WHERE (tbl_cart.status = @status) AND (tbl_cart.foodid = @foodid)">
-                        <SelectParameters>
-                            <asp:Parameter DefaultValue="Not approved" Name="status" />
-                            <asp:Parameter DefaultValue="foodid" Name="foodid" />
-                        </SelectParameters>
-                    </asp:SqlDataSource>--%>
-
-
-
-				<%--<table class="timetable_sub">
-					<thead>
-						<tr>
-							<th>SL No.</th>	
-							<th>Product</th>
-							<th>Quality</th>
-							<th>Product Name</th>
-						
-							<th>Price</th>
-							<th>Remove</th>
-						</tr>
-					</thead>
-					<%--<tbody><tr class="rem1">
-						<td class="invert">1</td>
-						<td class="invert-image"><a href="single.html"><img src="images/1.png" alt=" " class="img-responsive"></a></td>
-						<td class="invert">
-							 <div class="quantity"> 
-								<div class="quantity-select">                           
-									<div class="entry value-minus">&nbsp;</div>
-									<div class="entry value"><span>1</span></div>
-									<div class="entry value-plus active">&nbsp;</div>
-								</div>
-							</div>
-						</td>
-						<td class="invert">Fortune Sunflower Oil</td>
-						
-						<td class="invert">$290.00</td>
-						<td class="invert">
-							<div class="rem">
-								<div class="close1"> </div>
-							</div>
-
-						</td>
-					</tr>--%>
-		    </tbody></table>
 			</div>
-			<div class="checkout-left">	
-				<div class="col-md-4 checkout-left-basket">
-					<h4>Continue to basket</h4>
-					<ul>
-						<li>Product1 <i>-</i> <span>$15.00 </span></li>
-						<li>Product2 <i>-</i> <span>$25.00 </span></li>
-						<li>Product3 <i>-</i> <span>$29.00 </span></li>
-						<li>Total Service Charges <i>-</i> <span>$15.00</span></li>
-						<li>Total <i>-</i> <span>$84.00</span></li>
-					</ul>
-				</div>
-				<div class="col-md-8 address_form_agile">
-					  <h4>Add a new Details</h4>
-<%--				<form action="payment.html" method="post" class="creditly-card-form agileinfo_form">--%>
-									<section class="creditly-wrapper wthree, w3_agileits_wrapper">
-										<div class="information-wrapper">
-											<div class="first-row form-group">
-												<div class="controls">
-													<label class="control-label">Full name: </label>
-													<input class="billing-address-name form-control" type="text" name="name" placeholder="Full name">
-												</div>
-												<div class="w3_agileits_card_number_grids">
-													<div class="w3_agileits_card_number_grid_left">
-														<div class="controls">
-															<label class="control-label">Mobile number:</label>
-														    <input class="form-control" type="text" placeholder="Mobile number">
-														</div>
-													</div>
-													<div class="w3_agileits_card_number_grid_right">
-														<div class="controls">
-															<label class="control-label">Landmark: </label>
-														 <input class="form-control" type="text" placeholder="Landmark">
-														</div>
-													</div>
-													<div class="clear"> </div>
-												</div>
-												<div class="controls">
-													<label class="control-label">Town/City: </label>
-												 <input class="form-control" type="text" placeholder="Town/City">
-												</div>
-													<div class="controls">
-															<label class="control-label">Address type: </label>
-												     <select class="form-control option-w3ls">
-																							<option>Office</option>
-																							<option>Home</option>
-																							<option>Commercial</option>
-							
-																					</select>
-													</div>
-											</div>
-											<button class="submit check_out">Delivery to this Address</button>
-										</div>
-									</section>
-								</form>
-									<div class="checkout-right-basket">
-				        	<a href="payment.html">Make a Payment <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
-			      	</div>
-					</div>
 			
-				<div class="clearfix"> </div>
-				
-			</div>
-
 		</div>
 <!-- //about -->
 		</div>
 		<div class="clearfix"></div>
 	</div>
 <!-- //banner -->
-
-    </div>
+	
     </form>
+
 </body>
 </html>

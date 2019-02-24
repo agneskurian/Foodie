@@ -50,11 +50,20 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				 <div class="form">
 					<h2>Register Here</h2>
                         <asp:TextBox ID="txtshopid" runat="server" placeholder="ShopId"></asp:TextBox>
-                       <%-- <asp:TextBox ID="txtsname" runat="server" placeholder="ShopName"></asp:TextBox>
+                         <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtshopid" ErrorMessage="*" ForeColor="Red"></asp:RequiredFieldValidator>
+                          
                         <asp:TextBox ID="txtcity" runat="server" placeholder="City"></asp:TextBox>
-                       --%> <asp:TextBox ID="txtemail" runat="server" placeholder="email" TextMode="Email"></asp:TextBox>
+                     <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server"  ErrorMessage="*" ControlToValidate="txtcity"></asp:RequiredFieldValidator>
+                       <asp:TextBox ID="txtemail" runat="server" placeholder="Email" TextMode="Email"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="*" ControlToValidate="txtemail"></asp:RequiredFieldValidator>
+                        <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="txtemail" ErrorMessage="Please enter a valid emailid" ForeColor="Red" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RegularExpressionValidator>
+                
                         <asp:TextBox ID="txtpass" runat="server" placeholder="Password" TextMode="Password"></asp:TextBox>
-                        <asp:TextBox ID="txtcpass" runat="server" placeholder="Retype Password" TextMode="Password"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ControlToValidate="txtpass" ErrorMessage="*" ForeColor="Red"></asp:RequiredFieldValidator>
+
+                        <asp:TextBox ID="txtcpass" runat="server" placeholder="Confirm Password" TextMode="Password"></asp:TextBox>
+                        <asp:CompareValidator ID="CompareValidator1" runat="server" ControlToCompare="txtpass" ControlToValidate="txtcpass" ErrorMessage="Passwordmismatch" ForeColor="Red"></asp:CompareValidator>
+
                         <asp:Button ID="Button1" runat="server" Text="Register" OnClick="Button1_Click" />			
 <%--                        <asp:Button ID="Button2" runat="server" Text="Home" OnClick="Button1_Click" />			--%>
 

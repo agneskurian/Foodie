@@ -4,21 +4,19 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using System.Web.UI.WebControls;
 using System.Data.SqlClient;
 using System.Data;
 using System.Configuration;
-
-
-public partial class Guest_purchase : System.Web.UI.Page
+public partial class Guest_order : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
+    
         if (Session["email"] == null)
         {
             Response.Redirect("~/Guest/adminlogin.aspx");
         }
-        else if (Session["email"].ToString() == "")
+         if(Session["email"].ToString() == "")
         {
             Response.Redirect("~/Guest/FoodieDefault.aspx");
         }
@@ -54,7 +52,7 @@ public partial class Guest_purchase : System.Web.UI.Page
             int id = 3;
             Class1 obj = new Class1();
             obj.getconnect();
-            SqlCommand cmd = new SqlCommand("spaddfood", obj.con);
+            SqlCommand cmd = new SqlCommand("spaddcart", obj.con);
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.Add("@flag", 1);
             DataTable dt = new DataTable();
@@ -121,5 +119,6 @@ public partial class Guest_purchase : System.Web.UI.Page
         
 
 
+    
     }
 }

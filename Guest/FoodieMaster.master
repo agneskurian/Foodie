@@ -73,7 +73,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<li><a href="services.html" style="color: #FFFFFF">Contact Us</a><i>/</i></li>
                     <li><a href="mycart.aspx" style="color: #FFFFFF">MyCart</a><i>/</i></li>
 
-<%--                    <li><a href="logout.aspx" style="color: #FFFFFF">Logout</a></li>--%>
+<%--   <li><a href="../userlogout.aspx" style="color: #FFFFFF">Logout</a></li>--%>
 				</ul>
 			</div>
 
@@ -148,17 +148,19 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
           
                                                <i class="fa fa-shopping-cart" aria-hidden="true" style="color: #FF0000"><a href="Defaultd.aspx?id=<%# Eval("shopid") %>">Online Delivery</a>
                                               <i class="fa fa-credit-card" aria-hidden="true" style="color: #FF0000"></i><a href="menu.aspx?id=<%# Eval("shopid") %>"">Menu</a>
+                                                   <i class="fa fa-phone" aria-hidden="true" style="color: #FF0000"><asp:Label ID="Label2" runat="server" ForeColor="Black" Text='<%# Eval("Phone") %>' />
+</i>
                                                 <br />
                                                 <br />
 
-                                               <i class="fa fa-credit-card" aria-hidden="true" style="color: #FF0000"></i><a href="moreshop.aspx?id=<%# Eval("shopid") %>"">More</a>
+<%--                                               <i class="fa fa-credit-card" aria-hidden="true" style="color: #FF0000"></i><a href="moreshop.aspx?id=<%# Eval("shopid") %>"">More</a>--%>
 
                                         </ItemTemplate>
 
                                     </asp:DataList>
 <%--                            <asp:HyperLink ID="HyperLink1" runat="server">View FoodItems</asp:HyperLink>--%>
                             &nbsp;&nbsp;
-                                    <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:QuickyConnectionString %>" SelectCommand="SELECT [HotelName],[shopid], [image], [Location],[Description] FROM [tbl_add_hotel_details] WHERE (([City] = @City) AND ([Status] = @Status))">
+                                    <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:QuickyConnectionString %>" SelectCommand="SELECT [HotelName],[shopid], [image], [Location],[Description],[Phone] FROM [tbl_add_hotel_details] WHERE (([City] = @City) AND ([Status] = @Status))">
                                         <SelectParameters>
                                             <asp:ControlParameter ControlID="DropDownList1" Name="City" PropertyName="SelectedValue" Type="String" />
                                             <asp:Parameter DefaultValue="Approved" Name="Status" Type="String" />

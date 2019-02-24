@@ -22,11 +22,10 @@ public partial class Restaurant_addfood : System.Web.UI.Page
     }
     protected int get_id()
     {
-        int id = 106;
-        int a = 0;
+        int id = 0;
         Class1 obj = new Class1();
         obj.getconnect();
-        SqlCommand cmd = new SqlCommand("spaddemployee", obj.con);
+        SqlCommand cmd = new SqlCommand("spaddfood", obj.con);
         cmd.CommandType = CommandType.StoredProcedure;
         cmd.Parameters.Add("@flag", 1);
         DataTable dt = new DataTable();
@@ -34,14 +33,30 @@ public partial class Restaurant_addfood : System.Web.UI.Page
         adt.Fill(dt);
         for (int i = 0; i < dt.Rows.Count; i++)
         {
-            a = Int32.Parse(dt.Rows[i][0].ToString());
-            if (a > id)
-            {
-                id = a;
-            }
+            id = Int32.Parse(dt.Rows[i][0].ToString());
         }
         id = id + 1;
+
         return id;
+
+        //int id = 1;
+        //int a = ;
+        //Class1 obj = new Class1();
+        //obj.getconnect();
+        //SqlCommand cmd = new SqlCommand("spaddemployee", obj.con);
+        //cmd.CommandType = CommandType.StoredProcedure;
+        //cmd.Parameters.Add("@flag", 1);
+        //DataTable dt = new DataTable();
+        //SqlDataAdapter adt = new SqlDataAdapter(cmd);
+        //adt.Fill(dt);
+        //for (int i = 0; i < dt.Rows.Count; i++)
+        //{
+        //    a = Int32.Parse(dt.Rows[i][0].ToString());
+        //    if (a > id)
+        //    {
+        //        id = a;
+        //    }
+        //}
     }
 
     protected void Button1_Click(object sender, EventArgs e)

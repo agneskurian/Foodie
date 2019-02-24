@@ -57,6 +57,8 @@ public partial class Restaurant_add_hotel_details : System.Web.UI.Page
         cmd.Parameters.Add("@image", ViewState["filepath"].ToString());
         cmd.Parameters.Add("@City", txtcity.Text);
         cmd.Parameters.Add("@Location", txtlocation.Text);
+        cmd.Parameters.Add("@Phone", txtphn.Text);
+
         cmd.Parameters.Add("@Deliverytime", txtdtm.Text);
         cmd.Parameters.Add("@Facility", DropDownList2.Text);
         cmd.Parameters.Add("@Description",txtdescription.Text);
@@ -110,6 +112,10 @@ public partial class Restaurant_add_hotel_details : System.Web.UI.Page
         }
 
 
+
+    }
+    protected void Button2_Click(object sender, EventArgs e)
+    {
 
     }
 }
