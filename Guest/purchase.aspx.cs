@@ -51,12 +51,12 @@ public partial class Guest_purchase : System.Web.UI.Page
     protected int get_ids()
     {
         {
-            int id = 3;
+            int id =200;
             Class1 obj = new Class1();
             obj.getconnect();
-            SqlCommand cmd = new SqlCommand("spaddfood", obj.con);
+            SqlCommand cmd = new SqlCommand("spaddcart", obj.con);
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.Add("@flag", 1);
+            cmd.Parameters.Add("@flag", 2);
             DataTable dt = new DataTable();
             SqlDataAdapter adt = new SqlDataAdapter(cmd);
             adt.Fill(dt);

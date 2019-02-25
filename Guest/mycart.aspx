@@ -55,6 +55,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<li><a href="products.html" style="color: #FFFFFF">Services</a><i>/</i></li>
 					<li><a href="services.html" style="color: #FFFFFF">Contact Us</a><i>/</i></li>
                     <li><a href="mycart.aspx" style="color: #FFFFFF">MyCart</a><i>/</i></li>
+                   <li><a href="payment.aspx" style="color: #FFFFFF">Payment</a><i>/</i></li>
 
    <li><a href="../userlogout.aspx" style="color: #FFFFFF">Logout</a></li>
 				</ul>
@@ -165,7 +166,88 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		<div class="clearfix"></div>
 	</div>
 <!-- //banner -->
-	
+	<div>
+    <%--<div class="checkout-left">	
+				<div class="col-md-4 checkout-left-basket">
+
+                    <asp:DataList ID="DataList1" runat="server" DataSourceID="SqlDataSource2">
+                     <ItemTemplate>
+                         <asp:Label ID="foodnameLabel" runat="server" Text='<%# Eval("foodname") %>' />
+                         <br />
+                         <br />
+                                  </ItemTemplate>
+
+                        </asp:DataList>
+				    <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:QuickyConnectionString %>" SelectCommand="SELECT SELECT  tbl_add_fooditems.foodname tbl_order.totalcost FROM tbl_add_fooditems INNER JOIN tbl_order ON tbl_add_fooditems.foodid = tbl_order.foodid WHERE  (([email] = @email) AND ([status] = @status))"></asp:SqlDataSource>
+				</div>
+        </div>
+	--%>			<div class="col-md-8 address_form_agile">
+					  <h2>Add Delivery Details</h2>  
+<%--				<form action="payment.html" method="post" class="creditly-card-form agileinfo_form">--%>
+									<section class="creditly-wrapper wthree, w3_agileits_wrapper">
+										<div class="information-wrapper">
+											<div class="first-row form-group">
+												<div class="controls">
+                                                    <asp:Label ID="Label1" runat="server" class="control-label" Text="Label">Full name</asp:Label>
+                                                    <asp:TextBox ID="txtname" runat="server" TextMode="SingleLine" class="billing-address-name form-control" placeholder="Full name"></asp:TextBox>
+												    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtname" ErrorMessage="*" ForeColor="Red"></asp:RequiredFieldValidator>
+                                                    <asp:RegularExpressionValidator ID="RegularExpressionValidator3" runat="server" ErrorMessage="Enter valid usename" ForeColor="Red" ControlToValidate="txtname" ValidationExpression="^[a-zA-Z\s]+$"></asp:RegularExpressionValidator>
+              
+                                                </div>
+												<div class="w3_agileits_card_number_grids">
+													<div class="w3_agileits_card_number_grid_left">
+														<div class="controls">
+															<asp:Label ID="Label2" runat="server" class="control-label" Text="Label">Mobile Number</asp:Label>
+                                                    <asp:TextBox ID="txtphn" runat="server" TextMode="Number"  class="billing-address-name form-control" placeholder="Mobile number"></asp:TextBox>
+												<asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="*" ControlToValidate="txtphn"></asp:RequiredFieldValidator>
+                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ControlToValidate="txtphn" ErrorMessage="Enter a valid phone number
+                        " ForeColor="Red" ValidationExpression="\d{10}"></asp:RegularExpressionValidator>
+               
+                                                        </div>
+													</div>
+													<div class="w3_agileits_card_number_grid_right">
+														<div class="controls">
+															<asp:Label ID="Label3" runat="server" class="control-label" Text="Label">Landmark</asp:Label>
+                                                    <asp:TextBox ID="txtland" runat="server" TextMode="SingleLine" class="billing-address-name form-control" placeholder="Landmark"></asp:TextBox>
+													<asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="txtland" ErrorMessage="*" ForeColor="Red"></asp:RequiredFieldValidator>
+                                                    <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ErrorMessage="Enter valid usename" ForeColor="Red" ControlToValidate="txtland" ValidationExpression="^[a-zA-Z\s]+$"></asp:RegularExpressionValidator>
+              
+                                                        </div>
+													</div>
+													<div class="clear"> </div>
+												</div>
+                                             	<div class="w3_agileits_card_number_grid_right">
+												<div class="controls">
+													<asp:Label ID="Label4" runat="server" class="control-label" Text="Label">Town/city</asp:Label>
+                                                    <asp:TextBox ID="txttown" runat="server" TextMode="SingleLine" class="billing-address-name form-control" placeholder="Town/city"></asp:TextBox>
+													<asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="txttown" ErrorMessage="*" ForeColor="Red"></asp:RequiredFieldValidator>
+                                                    <asp:RegularExpressionValidator ID="RegularExpressionValidator4" runat="server" ErrorMessage="Enter valid usename" ForeColor="Red" ControlToValidate="txttown" ValidationExpression="^[a-zA-Z\s]+$"></asp:RegularExpressionValidator>
+              											</div>
+																							</div>
+                                                	<div class="w3_agileits_card_number_grid_right">
+												<div class="controls">
+													<asp:Label ID="Label5" runat="server" class="control-label" Text="Label">Address</asp:Label>
+                                                    <asp:TextBox ID="txtadd" runat="server" TextMode="MultiLine"  class="billing-address-name form-control" placeholder="Address"></asp:TextBox>
+											         <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ErrorMessage="*" ControlToValidate="txtadd"></asp:RequiredFieldValidator>
+
+                                                    											</div>
+																							</div>
+										
+                                                <asp:Button ID="Button2" class="submit check_out" runat="server" Text="Delivery to this Address" BackColor="Lime" Height="52px" Width="271px" OnClick="Button2_Click" />
+										                                                    </div>
+                                            									</section>
+
+
+                    </div>
+							<div>
+
+			      	</div>
+					
+				<div class="clearfix"> </div>
+				
+        </div>
+                                                        <%--<asp:Button ID="Button3" class="submit check_out" runat="server" Text="Make payments" BackColor="Lime" Height="52px" Width="271px" OnClick="Button3_Click" />--%>
+
     </form>
 
 </body>

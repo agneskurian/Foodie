@@ -45,12 +45,12 @@ public partial class Guest_mycart : System.Web.UI.Page
      protected int get_id()
     {
         {
-            int id = 1;
+            int id = 5;
             Class1 obj = new Class1();
             obj.getconnect();
-            SqlCommand cmd = new SqlCommand("spaddfood", obj.con);
+            SqlCommand cmd = new SqlCommand("spaddcart", obj.con);
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.Add("@flag", 1);
+            cmd.Parameters.Add("@flag", 2);
             DataTable dt = new DataTable();
             SqlDataAdapter adt = new SqlDataAdapter(cmd);
             adt.Fill(dt);
@@ -85,4 +85,36 @@ public partial class Guest_mycart : System.Web.UI.Page
 
     
     }
+    protected void Button2_Click(object sender, EventArgs e)
+    {
+        Class1 obj = new Class1();
+        obj.getconnect();
+        SqlCommand cmd1 = new SqlCommand("spdaddress", obj.con);
+        cmd1.CommandType = CommandType.StoredProcedure;
+        cmd1.Parameters.Add("@flag", 0);
+        cmd1.Parameters.Add("@name", txtname.Text);
+        cmd1.Parameters.Add("@phone", txtphn.Text);
+        cmd1.Parameters.Add("@land", txtland.Text);
+        cmd1.Parameters.Add("@town", txttown.Text);
+        cmd1.Parameters.Add("@address", txtadd.Text);
+        cmd1.ExecuteNonQuery();
+
+        clear();
+        Response.Write("<script>alert('Inserted Successfully')</script>");
+    }
+    protected void clear()
+    {
+        txtname.Text = "";
+        txtphn.Text = "";
+        txtland.Text = "";
+        txttown.Text = "";
+        txtadd.Text = "";
+        // DropDownList1.Text = "";
+    }
+
+    protected void Button3_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("payment.aspx");
+    }
 }
+
